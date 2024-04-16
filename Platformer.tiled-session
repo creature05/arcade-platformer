@@ -1,0 +1,148 @@
+{
+    "activeFile": "platformer_level_2.json",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInEditor": 1
+        },
+        "#tiles": {
+            "dynamicWrapping": false
+        },
+        "Platformer.json": {
+            "scale": 0.23,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1400,
+                "y": 1482.608695652174
+            }
+        },
+        "arcade_platformer.tmx": {
+            "scale": 0.14992187499999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1727.5664408546122,
+                "y": 927.1495570609693
+            }
+        },
+        "arcade_platformer.tsj": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/arcade_platformer.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "assets/platform_level_01.tmx": {
+            "scale": 0.15,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1420,
+                "y": 1720
+            }
+        },
+        "assets/platform_level_02_start.tmx": {
+            "scale": 0.15,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1600,
+                "y": 1280
+            }
+        },
+        "assets/platform_level_02_start.tmx#arcade_platformer": {
+            "scaleInDock": 1
+        },
+        "assets:arcade_platformer.tsx": {
+            "scaleInDock": 1
+        },
+        "enemies.tsj": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map_1.json": {
+            "scale": 0.15140625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1235.0877192982457,
+                "y": 1895.5624355005161
+            }
+        },
+        "platformer_level_1.json": {
+            "expandedObjectLayers": [
+                6,
+                2,
+                10
+            ],
+            "scale": 0.23,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1591.3043478260868,
+                "y": 1999.9999999999998
+            }
+        },
+        "platformer_level_2.json": {
+            "expandedObjectLayers": [
+                8,
+                5,
+                4
+            ],
+            "scale": 0.2807,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1977.1998574991094,
+                "y": 1435.696473102957
+            }
+        },
+        "platformer_level_2.json#tiles": {
+            "scaleInDock": 1
+        },
+        "platformer_level_3.json": {
+            "expandedObjectLayers": [
+                8,
+                5,
+                4
+            ],
+            "scale": 0.2672,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 553.8922155688624,
+                "y": 1279.940119760479
+            }
+        },
+        "platformer_level_3.json#tiles": {
+            "scaleInDock": 1
+        },
+        "untitled.tmj": {
+            "scale": 0.15,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1600,
+                "y": 1280
+            }
+        }
+    },
+    "last.imagePath": "/Users/gabe/projects/capstone_game/assets/images/tiles",
+    "openFiles": [
+        "platformer_level_1.json",
+        "platformer_level_2.json",
+        "platformer_level_3.json",
+        "arcade_platformer.tsj"
+    ],
+    "project": "",
+    "recentFiles": [
+        "platformer_level_1.json",
+        "arcade_platformer.tsj",
+        "platformer_level_3.json",
+        "platformer_level_2.json",
+        "enemies.tsj",
+        "Platformer.json",
+        "map_1.json",
+        "untitled.tmj",
+        "assets/platform_level_02_start.tmx",
+        "assets/platform_level_01.tmx",
+        "arcade_platformer.tmx"
+    ]
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="25" height="20" tilewidth="128" tileheight="128" infinite="0" nextlayerid="6" nextobjectid="6">
+ <tileset firstgid="1" source="assets:arcade_platformer.tsx"/>
+ <layer id="1" name="ground" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBgBPxALQDEjEPPRwHxOIGZCwhxUtAeb+dS0B5/5pNjDiAcTMh/ZHnzmMNMBAwCebwFj
+  </data>
+ </layer>
+ <layer id="2" name="ladders" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=
+  </data>
+ </layer>
+ <layer id="3" name="background" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGN1ChsnlKVDZvMAAATQgARw==
+  </data>
+ </layer>
+ <layer id="4" name="goal" width="25" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMAoGF5Cjgx2ydLCDngAAQ3gAPA==
+  </data>
+ </layer>
+ <objectgroup id="5" name="coins">
+  <object id="1" gid="23" x="509.077" y="2283.23" width="128" height="128"/>
+  <object id="2" gid="24" x="1546.95" y="1543.72" width="128" height="128"/>
+  <object id="3" gid="25" x="1086" y="1914" width="128" height="128"/>
+ </objectgroup>
+</map>
