@@ -22,12 +22,12 @@
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":17
+                         "value":1000
                         }, 
                         {
                          "name":"boundary_right",
                          "type":"int",
-                         "value":23
+                         "value":1500
                         }, 
                         {
                          "name":"change_x",
@@ -60,12 +60,12 @@
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":7
+                         "value":520
                         }, 
                         {
                          "name":"boundary_right",
                          "type":"int",
-                         "value":11
+                         "value":700
                         }, 
                         {
                          "name":"change_x",
