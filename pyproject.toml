@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "arcade-platformer"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+arcade = "^2.6.17"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.0"
+rope = "^1.13.0"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
