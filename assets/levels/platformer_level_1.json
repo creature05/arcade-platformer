@@ -9,9 +9,10 @@
          "name":"Enemies",
          "objects":[
                 {
-                 "height":259.112657443586,
-                 "id":27,
+                 "height":0,
+                 "id":36,
                  "name":"",
+                 "point":true,
                  "properties":[
                         {
                          "name":"Points",
@@ -41,14 +42,15 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":130.579241978749,
-                 "x":2493.59272801938,
-                 "y":1789.56697119787
+                 "width":0,
+                 "x":2554.54545454545,
+                 "y":1981.81818181818
                 }, 
                 {
-                 "height":259.733687412971,
-                 "id":30,
+                 "height":0,
+                 "id":37,
                  "name":"",
+                 "point":true,
                  "properties":[
                         {
                          "name":"Points",
@@ -78,9 +80,9 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":137.069298901722,
-                 "x":1146.87536028734,
-                 "y":1403.41210153592
+                 "width":0,
+                 "x":1221.21212121212,
+                 "y":1603.0303030303
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -312,7 +314,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":36,
+ "nextobjectid":38,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",

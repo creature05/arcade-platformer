@@ -9,6 +9,7 @@ SCREEN_TITLE = "Platformer"
 
 # Constants used to scale our sprites from their original size
 TILE_SCALING = 0.5
+# TILE_SCALING = 1.0
 CHARACTER_SCALING = TILE_SCALING * 2
 COIN_SCALING = TILE_SCALING
 SPRITE_PIXEL_SIZE = 128
@@ -351,7 +352,7 @@ class MyGame(arcade.View):
 
             for my_object in enemies_layer:
                 cartesian = self.tile_map.get_cartesian(
-                    my_object.shape[0][0], -my_object.shape[0][1]
+                    my_object.shape[0], my_object.shape[1]
                 )
                 enemy_type = my_object.properties["type"]
                 if enemy_type == "robot":
