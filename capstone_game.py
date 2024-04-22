@@ -652,16 +652,20 @@ class MyGame(arcade.View):
                     self.window.show_view(game_over)
                     return
 
+
         # handles changing levels
-        if self.score >= 385:
-            if self.level == 3:
-                win = Win()
-                self.window.show_view(win)
-            else:
-                end_level = LevelFinish()
-                self.window.show_view(end_level)
-                setup()
-            return
+        if self.level == 1 and self.score >= 250:
+            self.level += 1
+            self.score = 0
+            self.setup()
+        elif self.level == 2 and self.score >= 500:
+            self.level += 1
+            self.score = 0
+            self.setup()
+        elif self.level == 3 and self.score >= 1000:
+            win = Win()
+            self.window.show_view(win)
+       
 
             # Loop through each coin we hit (if any) and remove it.
             # see if we hit any enemies.
@@ -705,31 +709,6 @@ class GameOverView(arcade.View):
         game_view = MyGame()
         self.window.show_view(game_view)
 
-
-class LevelFinish(arcade.View):
-    """Class to manage the game overview"""
-
-    def on_show_view(self):
-        """Called when switching to this view"""
-        arcade.set_background_color(arcade.color.DARK_GREEN)
-
-    def on_draw(self):
-        """Draw the game overview"""
-        self.clear()
-        arcade.draw_text(
-            "You finished the level! - Click to continue to the next level",
-            SCREEN_WIDTH / 2,
-            SCREEN_HEIGHT / 2,
-            arcade.color.WHITE,
-            30,
-            anchor_x="center",
-        )
-
-    def on_mouse_press(self, _x, _y, _button, _modifiers):
-        """Use a mouse press to advance to the 'game' view."""
-        self.level += 1
-        game_view = MyGame()
-        self.window.show_view(game_view)
 
 
 class Win(arcade.View):
