@@ -653,7 +653,7 @@ class MyGame(arcade.View):
                     return
 
 
-        # handles changing levels
+         # handles changing levels
         if self.level == 1 and self.score >= 250:
             self.level += 1
             self.score = 0

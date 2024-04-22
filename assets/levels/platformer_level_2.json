@@ -9,9 +9,10 @@
          "name":"Enemies",
          "objects":[
                 {
-                 "height":260.605910029284,
-                 "id":13,
+                 "height":0,
+                 "id":18,
                  "name":"",
+                 "point":true,
                  "properties":[
                         {
                          "name":"Points",
@@ -21,12 +22,12 @@
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":6
+                         "value":475
                         }, 
                         {
                          "name":"boundary_right",
                          "type":"int",
-                         "value":16
+                         "value":1000
                         }, 
                         {
                          "name":"change_x",
@@ -41,29 +42,30 @@
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":132.167053508424,
-                 "x":1405.53559589288,
-                 "y":376.991127857963
+                 "width":0,
+                 "x":1460.17699115044,
+                 "y":523.598820058997
                 }, 
                 {
-                 "height":260.605910029284,
-                 "id":14,
+                 "height":0,
+                 "id":19,
                  "name":"",
+                 "point":true,
                  "properties":[
                         {
                          "name":"Points",
                          "type":"int",
-                         "value":100
+                         "value":50
                         }, 
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":18
+                         "value":900
                         }, 
                         {
                          "name":"boundary_right",
                          "type":"int",
-                         "value":25
+                         "value":1075
                         }, 
                         {
                          "name":"change_x",
@@ -73,14 +75,52 @@
                         {
                          "name":"type",
                          "type":"string",
-                         "value":"robot"
+                         "value":"zombie"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":132.167053508424,
-                 "x":2681.72607208335,
-                 "y":1648.41969928653
+                 "width":0,
+                 "x":1980.08849557522,
+                 "y":1205.75221238938
+                }, 
+                {
+                 "height":0,
+                 "id":20,
+                 "name":"",
+                 "point":true,
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":50
+                        }, 
+                        {
+                         "name":"boundary_left",
+                         "type":"int",
+                         "value":580
+                        }, 
+                        {
+                         "name":"boundary_right",
+                         "type":"int",
+                         "value":825
+                        }, 
+                        {
+                         "name":"change_x",
+                         "type":"int",
+                         "value":1
+                        }, 
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"zombie"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":1471.2389380531,
+                 "y":1950.58997050148
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -90,7 +130,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYBgFowABuAlgnoFz2igYAMDFMLTjnXegHUAC4AdiQSDmw6OGEv+AzOcEYmYg5iBgDzZ3EYNh5sMwB5n6RjF5GACCkgNn",
+         "data":"eJxjYBgFowABuAlgnoFz2igYAMDFMHTjnXegHUAi4AdiQSDmwyFPqX9A5nMCMTMQc+CxB5e7iMEw82GYg0x9o5g8DACC+gNn",
          "encoding":"base64",
          "height":20,
          "id":1,
@@ -138,15 +178,15 @@
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":0
+                         "value":1
                         }, 
                         {
                          "name":"boundary_right",
                          "type":"int",
-                         "value":6
+                         "value":350
                         }, 
                         {
-                         "name":"change_y",
+                         "name":"change_x",
                          "type":"float",
                          "value":1
                         }],
@@ -319,44 +359,26 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":-1.83783783783349,
-                 "y":643.021879021874
+                 "x":768.811129713789,
+                 "y":1771.34046309267
                 }, 
                 {
-                 "gid":21,
+                 "gid":40,
                  "height":128,
-                 "id":2,
+                 "id":21,
                  "name":"",
                  "properties":[
                         {
                          "name":"Points",
                          "type":"int",
-                         "value":5
+                         "value":300
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":1791.85585585586,
-                 "y":1761.2972972973
-                }, 
-                {
-                 "gid":19,
-                 "height":128,
-                 "id":3,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":1
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":768.432432432432,
-                 "y":1772.10810810811
+                 "x":61.3687315634218,
+                 "y":624.47197640118
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -365,7 +387,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":18,
+ "nextobjectid":22,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -374,6 +396,10 @@
         {
          "firstgid":1,
          "source":"arcade_platformer.tsj"
+        }, 
+        {
+         "firstgid":26,
+         "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
  "type":"map",
