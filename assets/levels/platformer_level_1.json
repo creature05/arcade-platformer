@@ -140,12 +140,12 @@
                         {
                          "name":"boundary_bottom",
                          "type":"float",
-                         "value":900
+                         "value":640
                         }, 
                         {
                          "name":"boundary_top",
                          "type":"float",
-                         "value":640
+                         "value":900
                         }, 
                         {
                          "name":"change_y",
@@ -308,22 +308,16 @@
                  "y":1267.90682588826
                 }, 
                 {
-                 "gid":38,
+                 "gid":26,
                  "height":128,
-                 "id":39,
+                 "id":40,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":300
-                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":2045.73022127918,
-                 "y":645.994543801152
+                 "x":2045.09090909091,
+                 "y":636.727272727273
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -332,7 +326,7 @@
          "y":0
         }],
  "nextlayerid":11,
- "nextobjectid":40,
+ "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -343,7 +337,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":26,
+         "firstgid":28,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
