@@ -363,22 +363,22 @@
                  "y":1771.34046309267
                 }, 
                 {
-                 "gid":40,
+                 "gid":27,
                  "height":128,
-                 "id":21,
+                 "id":22,
                  "name":"",
                  "properties":[
                         {
                          "name":"Points",
                          "type":"int",
-                         "value":300
+                         "value":500
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":61.3687315634218,
-                 "y":624.47197640118
+                 "x":65.6296296296296,
+                 "y":619.555555555556
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -387,7 +387,7 @@
          "y":0
         }],
  "nextlayerid":9,
- "nextobjectid":22,
+ "nextobjectid":23,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -398,7 +398,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":26,
+         "firstgid":46,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

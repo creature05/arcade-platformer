@@ -312,6 +312,12 @@
                  "height":128,
                  "id":40,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":200
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
@@ -337,7 +343,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":28,
+         "firstgid":48,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
