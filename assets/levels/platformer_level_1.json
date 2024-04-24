@@ -22,7 +22,7 @@
                         {
                          "name":"boundary_left",
                          "type":"int",
-                         "value":1000
+                         "value":1150
                         }, 
                         {
                          "name":"boundary_right",
@@ -92,7 +92,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYBgFo2AUjALiABcQcyPhkQb4gVgQCfPRwHxOIGZGwhxUtAeb+ZTYI4gF4zIf2R5s+nBhfGaNYlQMAITcAwc=",
+         "data":"eJxjYBgFo2AUjALiABcQcyPhkQb4gVgQCfPRwHxOIGZGwhxUtAeb+ZTYI4gF4zIf2R5BIsyBYXxmjWJUDABB7ALU",
          "encoding":"base64",
          "height":20,
          "id":1,
@@ -330,8 +330,22 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYBgFo2AUjIJRMAroCwyR8CigDgAAyMAAlA==",
+         "encoding":"base64",
+         "height":20,
+         "id":11,
+         "name":"Don't Touch",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":11,
+ "nextlayerid":12,
  "nextobjectid":41,
  "orientation":"orthogonal",
  "renderorder":"right-down",
@@ -343,7 +357,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":48,
+         "firstgid":51,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

@@ -9,7 +9,6 @@ SCREEN_TITLE = "Platformer"
 
 # Constants used to scale our sprites from their original size
 TILE_SCALING = 0.5
-# TILE_SCALING = 1.0
 CHARACTER_SCALING = TILE_SCALING * 2
 COIN_SCALING = TILE_SCALING
 SPRITE_PIXEL_SIZE = 128
@@ -50,6 +49,7 @@ LAYER_NAME_LADDERS = "Ladders"
 LAYER_NAME_PLAYER = "Player"
 LAYER_NAME_ENEMIES = "Enemies"
 LAYER_NAME_BULLETS = "Bullets"
+LAYER_NAME_DONT_TOUCH = "Don't Touch"
 
 
 def load_texture_pair(filename):
@@ -314,9 +314,9 @@ class MyGame(arcade.View):
             LAYER_NAME_COINS: {
                 "use_spatial_hash": True,
             },
-            # LAYER_NAME_DONT_TOUCH: {
-            #     "use_spatial_hash": True,
-            # },
+            LAYER_NAME_DONT_TOUCH: {
+                "use_spatial_hash": True,
+            }
         }
 
         # Read in the tiled map
@@ -513,6 +513,21 @@ class MyGame(arcade.View):
 
         # Move the player with the physics engine
         self.physics_engine.update()
+
+        # Did the player fall off the map?
+        if self.player_sprite.center_y < -100:
+            arcade.play_sound(self.game_over)
+            gameover = GameOverView()
+            self.window.show_view(gameover)
+
+         # Did the player touch something they should not?
+        if arcade.check_for_collision_with_list(
+            self.player_sprite, self.scene[LAYER_NAME_DONT_TOUCH]
+        ):
+            arcade.play_sound(self.game_over)
+            gameover = GameOverView()
+            self.window.show_view(gameover)
+            
 
         # Update animations
         if self.physics_engine.can_jump():
