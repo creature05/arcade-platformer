@@ -91,6 +91,35 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":12,
+         "name":"Power Up",
+         "objects":[
+                {
+                 "gid":51,
+                 "height":128,
+                 "id":41,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Invincible"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":704.181818181818,
+                 "y":1845.81818181818
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "compression":"zlib",
          "data":"eJxjYBgFo2AUjALiABcQcyPhkQb4gVgQCfPRwHxOIGZGwhxUtAeb+ZTYI4gF4zIf2R5BIsyBYXxmjWJUDABB7ALU",
          "encoding":"base64",
@@ -345,8 +374,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":41,
+ "nextlayerid":13,
+ "nextobjectid":42,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -357,7 +386,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":51,
+         "firstgid":53,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

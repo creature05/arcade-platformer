@@ -50,7 +50,7 @@ LAYER_NAME_PLAYER = "Player"
 LAYER_NAME_ENEMIES = "Enemies"
 LAYER_NAME_BULLETS = "Bullets"
 LAYER_NAME_DONT_TOUCH = "Don't Touch"
-
+LAYER_NAME_POWER_UP = "Power Up"
 
 def load_texture_pair(filename):
     """
@@ -282,6 +282,9 @@ class MyGame(arcade.View):
         # Level
         self.level = 1
 
+        # Invincible timer
+        self.invincible_timer = 0
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
         self.jump_sound = arcade.load_sound(":resources:sounds/jump1.wav")
@@ -316,6 +319,9 @@ class MyGame(arcade.View):
             },
             LAYER_NAME_DONT_TOUCH: {
                 "use_spatial_hash": True,
+            },
+            LAYER_NAME_POWER_UP: {
+                "use_spatial_hash": True
             }
         }
 
@@ -418,6 +424,19 @@ class MyGame(arcade.View):
             18,
         )
 
+        # Draw invincible timer
+        if self.invincible_timer <= 0:
+            pass
+        else:
+            invincible_text = f"Invincible: {int(self.invincible_timer)}"
+            arcade.draw_text(
+                invincible_text,
+                10,
+                40,
+                arcade.csscolor.BLACK,
+                18,
+            )
+
     def process_keychange(self):
         """
         Called when we change a key up/down or we move on/off a ladder
@@ -514,6 +533,12 @@ class MyGame(arcade.View):
         # Move the player with the physics engine
         self.physics_engine.update()
 
+        # Creates a timer for the invincible power up
+        if self.invincible_timer > 0:
+            self.invincible_timer -= delta_time
+        elif self.invincible_timer <= 0:
+            self.invincible_timer = 0
+
         # Did the player fall off the map?
         if self.player_sprite.center_y < -100:
             arcade.play_sound(self.game_over)
@@ -524,9 +549,13 @@ class MyGame(arcade.View):
         if arcade.check_for_collision_with_list(
             self.player_sprite, self.scene[LAYER_NAME_DONT_TOUCH]
         ):
-            arcade.play_sound(self.game_over)
-            gameover = GameOverView()
-            self.window.show_view(gameover)
+            if self.invincible_timer > 0:
+                pass
+            else:
+                arcade.play_sound(self.game_over)
+                game_over = GameOverView()
+                self.window.show_view(game_over)
+                return
             
 
         # Update animations
@@ -641,10 +670,10 @@ class MyGame(arcade.View):
                 bullet.remove_from_sprite_lists()
 
         # See if we hit any coins
-        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS in self.tile_map.object_lists:
+        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
-                [self.scene[LAYER_NAME_ENEMIES], self.scene[LAYER_NAME_COINS]],
+                [self.scene[LAYER_NAME_ENEMIES], self.scene[LAYER_NAME_COINS], self.scene[LAYER_NAME_POWER_UP]],
             )
 
             # Loop through each coin we hit (if any) and remove it.
@@ -661,11 +690,25 @@ class MyGame(arcade.View):
                     # Remove the coin
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
+                
+                elif self.scene[LAYER_NAME_POWER_UP] in collision.sprite_lists:
+                    power_up_type = collision.properties["type"]
+                    if power_up_type == "Invincible":
+                        self.invincible_timer += 15
+                        collision.remove_from_sprite_lists()
+                        arcade.play_sound(self.collect_coin_sound)
+                    else:
+                        collision.remove_from_sprite_lists()
+                        arcade.play_sound(self.collect_coin_sound)
+
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
-                    arcade.play_sound(self.game_over)
-                    game_over = GameOverView()
-                    self.window.show_view(game_over)
-                    return
+                    if self.invincible_timer > 0:
+                        pass
+                    else:
+                        arcade.play_sound(self.game_over)
+                        game_over = GameOverView()
+                        self.window.show_view(game_over)
+                        return
 
 
          # handles changing levels

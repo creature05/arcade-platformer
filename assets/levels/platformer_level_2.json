@@ -129,8 +129,57 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":9,
+         "name":"Power Up",
+         "objects":[
+                {
+                 "gid":51,
+                 "height":128,
+                 "id":23,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"Invincible"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2559.76237623762,
+                 "y":1895.68316831683
+                }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"Power Up",
+                 "type":"string",
+                 "value":"Invincible"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "compression":"zlib",
-         "data":"eJxjYBgFowABuAlgnoFz2igYAMDFMHTjnXegHUAi4AdiQSDmwyFPqX9A5nMCMTMQc+CxB5e7iMEw82GYg0x9o5g8DACC+gNn",
+         "data":"eJxjYBgFo2AU4AImePAoGAWjYBQMJgAAoVoBbQ==",
+         "encoding":"base64",
+         "height":20,
+         "id":10,
+         "name":"Don't Touch",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYBgFowABuAlgnoFz2rAFcnjwQAMuBtrFOzcNzKQnoLb7+YFYEIj5qGwusvmcQMwMxBwk2ANzFzEYZj4Mc5CpbxSThwH+ZwQ1",
          "encoding":"base64",
          "height":20,
          "id":1,
@@ -386,8 +435,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":9,
- "nextobjectid":23,
+ "nextlayerid":11,
+ "nextobjectid":24,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -398,7 +447,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":46,
+         "firstgid":53,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
