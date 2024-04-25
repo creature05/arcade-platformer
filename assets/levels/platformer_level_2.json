@@ -152,12 +152,6 @@
                  "y":1895.68316831683
                 }],
          "opacity":1,
-         "properties":[
-                {
-                 "name":"Power Up",
-                 "type":"string",
-                 "value":"Invincible"
-                }],
          "type":"objectgroup",
          "visible":true,
          "x":0,

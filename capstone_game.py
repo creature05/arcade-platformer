@@ -720,7 +720,7 @@ class MyGame(arcade.View):
             self.level += 1
             self.score = 0
             self.setup()
-        elif self.level == 3 and self.score >= 1000:
+        elif self.level == 3 and self.score >= 900:
             win = Win()
             self.window.show_view(win)
        
@@ -790,9 +790,7 @@ class Win(arcade.View):
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view."""
-        self.level = 1
-        game_view = MyGame()
-        self.window.show_view(game_view)
+        arcade.close_window()
 
 
 def main():
