@@ -158,6 +158,29 @@
          "y":0
         }, 
         {
+         "draworder":"topdown",
+         "id":11,
+         "name":"End Level",
+         "objects":[
+                {
+                 "gid":72,
+                 "height":128,
+                 "id":25,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":82.1538461538461,
+                 "y":602.461538461538
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
          "compression":"zlib",
          "data":"eJxjYBgFo2AU4AImePAoGAWjYBQMJgAAoVoBbQ==",
          "encoding":"base64",
@@ -420,8 +443,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":65.6296296296296,
-                 "y":619.555555555556
+                 "x":1977.16809116809,
+                 "y":1988.78632478633
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -429,8 +452,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":11,
- "nextobjectid":24,
+ "nextlayerid":12,
+ "nextobjectid":26,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -441,7 +464,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":53,
+         "firstgid":74,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

@@ -51,6 +51,7 @@ LAYER_NAME_ENEMIES = "Enemies"
 LAYER_NAME_BULLETS = "Bullets"
 LAYER_NAME_DONT_TOUCH = "Don't Touch"
 LAYER_NAME_POWER_UP = "Power Up"
+LAYER_NAME_END_LEVEL = "End Level"
 
 def load_texture_pair(filename):
     """
@@ -272,6 +273,13 @@ class MyGame(arcade.View):
         # Keep track of the score
         self.score = 0
 
+        self.level_1_score = 0
+
+        self.level_2_score = 0
+
+        self.level_3_score = 0
+
+
         # Where is the right edge of the map?
         self.end_of_map = 0
 
@@ -306,23 +314,26 @@ class MyGame(arcade.View):
         # Layer specific options from the tilemap
         layer_options = {
             LAYER_NAME_PLATFORMS: {
-                "use_spatial_hash": True,
+                "use_spatial_hash": True
             },
             LAYER_NAME_MOVING_PLATFORMS: {
-                "use_spatial_hash": False,
+                "use_spatial_hash": False
             },
             LAYER_NAME_LADDERS: {
-                "use_spatial_hash": True,
+                "use_spatial_hash": True
             },
             LAYER_NAME_COINS: {
-                "use_spatial_hash": True,
+                "use_spatial_hash": True
             },
             LAYER_NAME_DONT_TOUCH: {
-                "use_spatial_hash": True,
+                "use_spatial_hash": True
             },
             LAYER_NAME_POWER_UP: {
                 "use_spatial_hash": True
-            }
+            },
+            LAYER_NAME_END_LEVEL: {
+                "use_spatial_hash": True
+            },
         }
 
         # Read in the tiled map
@@ -545,7 +556,7 @@ class MyGame(arcade.View):
             gameover = GameOverView()
             self.window.show_view(gameover)
 
-         # Did the player touch something they should not?
+        # Did the player touch something they should not?
         if arcade.check_for_collision_with_list(
             self.player_sprite, self.scene[LAYER_NAME_DONT_TOUCH]
         ):
@@ -670,12 +681,16 @@ class MyGame(arcade.View):
                 bullet.remove_from_sprite_lists()
 
         # See if we hit any coins
-        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP in self.tile_map.object_lists:
+        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
-                [self.scene[LAYER_NAME_ENEMIES], self.scene[LAYER_NAME_COINS], self.scene[LAYER_NAME_POWER_UP]],
+                [
+                self.scene[LAYER_NAME_ENEMIES], 
+                self.scene[LAYER_NAME_COINS], 
+                self.scene[LAYER_NAME_POWER_UP], 
+                self.scene[LAYER_NAME_END_LEVEL]],
             )
-
+       
             # Loop through each coin we hit (if any) and remove it.
             # see if we hit any enemies.
             for collision in player_collision_list:
@@ -702,43 +717,29 @@ class MyGame(arcade.View):
                         arcade.play_sound(self.collect_coin_sound)
 
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
-                    if self.invincible_timer > 0:
-                        pass
+                    if self.invincible_timer > 0:  
+                        collision.remove_from_sprite_lists()
+                        self.score += 100
+                        arcade.play_sound(self.hit_sound)
                     else:
                         arcade.play_sound(self.game_over)
                         game_over = GameOverView()
                         self.window.show_view(game_over)
                         return
 
-
-         # handles changing levels
-        if self.level == 1 and self.score >= 250:
-            self.level += 1
-            self.score = 0
-            self.setup()
-        elif self.level == 2 and self.score >= 500:
-            self.level += 1
-            self.score = 0
-            self.setup()
-        elif self.level == 3 and self.score >= 900:
-            win = Win()
-            self.window.show_view(win)
+        
+                # handles changing levels
+                elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
+                    if self.level < 3:
+                        level_score_key = f"level_{self.level}_score"
+                        self.__dict__[level_score_key] = self.__dict__.get(level_score_key, 0) + self.score
+                        self.level += 1
+                        self.setup()
+                    else:
+                        win = Win()
+                        self.window.show_view(win)  
+        
        
-
-            # Loop through each coin we hit (if any) and remove it.
-            # see if we hit any enemies.
-            for collision in player_collision_list:
-                # Figure out how many points this coin is worth
-                if "Points" not in collision.properties:
-                    print("warning, collected a coin without a Points property.")
-                else:
-                    points = int(collision.properties["Points"])
-                    self.score += points
-
-                # Remove the coin
-                collision.remove_from_sprite_lists()
-                arcade.play_sound(self.collect_coin_sound)
-
         # Position the camera
         self.center_camera_to_player()
 
