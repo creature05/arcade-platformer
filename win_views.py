@@ -95,7 +95,7 @@ class Win(arcade.View):
             anchor_x="center",
         )
         arcade.draw_text(
-            f"You've finished the game but only collected {self.objectives} out of 9 gems.",
+            f"You've finished the game and collected {self.objectives} out of 9 gems, good job",
                 SCREEN_WIDTH / 2,
                 SCREEN_HEIGHT / 2,
                 arcade.color.WHITE,
