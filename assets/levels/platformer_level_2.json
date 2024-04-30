@@ -427,24 +427,53 @@
                  "width":128,
                  "x":768.811129713789,
                  "y":1771.34046309267
-                }, 
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":12,
+         "name":"Objective",
+         "objects":[
                 {
                  "gid":27,
                  "height":128,
-                 "id":22,
+                 "id":26,
                  "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":500
-                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":1977.16809116809,
-                 "y":1988.78632478633
+                 "x":3066.76923076923,
+                 "y":1902.46153846154
+                }, 
+                {
+                 "gid":27,
+                 "height":128,
+                 "id":27,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2559.07692307692,
+                 "y":371.692307692308
+                }, 
+                {
+                 "gid":27,
+                 "height":128,
+                 "id":28,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":382.153846153846,
+                 "y":1029.38461538462
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -452,8 +481,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":12,
- "nextobjectid":26,
+ "nextlayerid":13,
+ "nextobjectid":29,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -464,7 +493,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":74,
+         "firstgid":75,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

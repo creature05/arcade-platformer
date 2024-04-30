@@ -315,8 +315,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":2466.72386849476,
-                 "y":1267.90682588826
+                 "x":2439.45114122203,
+                 "y":1272.45228043371
                 }, 
                 {
                  "gid":20,
@@ -333,26 +333,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":2633.39053516143,
+                 "x":2678.84508061598,
                  "y":1267.90682588826
-                }, 
-                {
-                 "gid":26,
-                 "height":128,
-                 "id":40,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":200
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":3013.27272727273,
-                 "y":1982.18181818182
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -396,9 +378,56 @@
          "width":25,
          "x":0,
          "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":14,
+         "name":"Objective",
+         "objects":[
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":43,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":3072.36363636364,
+                 "y":2032.18181818182
+                }, 
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":44,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2049.63636363636,
+                 "y":2086.72727272727
+                }, 
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":45,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2563.27272727273,
+                 "y":1273.09090909091
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":14,
- "nextobjectid":43,
+ "nextlayerid":15,
+ "nextobjectid":46,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -409,7 +438,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":74,
+         "firstgid":75,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

@@ -52,6 +52,7 @@ LAYER_NAME_BULLETS = "Bullets"
 LAYER_NAME_DONT_TOUCH = "Don't Touch"
 LAYER_NAME_POWER_UP = "Power Up"
 LAYER_NAME_END_LEVEL = "End Level"
+LAYER_NAME_OBJECTIVE = "Objective"
 
 def load_texture_pair(filename):
     """
@@ -279,6 +280,14 @@ class MyGame(arcade.View):
 
         self.level_3_score = 0
 
+        # Keep track of the objectives
+        self.objectives = 0
+        
+        self.level_1_objectives = 0
+
+        self.level_2_objectives = 0
+
+        self.level_3_objectives = 0
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -334,6 +343,9 @@ class MyGame(arcade.View):
             LAYER_NAME_END_LEVEL: {
                 "use_spatial_hash": True
             },
+            LAYER_NAME_OBJECTIVE: {
+                "use_spatial_hash": True
+            }
         }
 
         # Read in the tiled map
@@ -681,14 +693,16 @@ class MyGame(arcade.View):
                 bullet.remove_from_sprite_lists()
 
         # See if we hit any coins
-        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL in self.tile_map.object_lists:
+        if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL or LAYER_NAME_OBJECTIVE in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
                 [
                 self.scene[LAYER_NAME_ENEMIES], 
                 self.scene[LAYER_NAME_COINS], 
                 self.scene[LAYER_NAME_POWER_UP], 
-                self.scene[LAYER_NAME_END_LEVEL]],
+                self.scene[LAYER_NAME_END_LEVEL],
+                self.scene[LAYER_NAME_OBJECTIVE]
+                ]
             )
        
             # Loop through each coin we hit (if any) and remove it.
@@ -709,7 +723,7 @@ class MyGame(arcade.View):
                 elif self.scene[LAYER_NAME_POWER_UP] in collision.sprite_lists:
                     power_up_type = collision.properties["type"]
                     if power_up_type == "Invincible":
-                        self.invincible_timer += 15
+                        self.invincible_timer += 8
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
                     else:
@@ -736,8 +750,32 @@ class MyGame(arcade.View):
                         self.level += 1
                         self.setup()
                     else:
-                        win = Win()
-                        self.window.show_view(win)  
+                        if self.objectives >= 9:    
+                            win = Win(self.objectives)
+                            self.window.show_view(win)
+                        elif self.objectives >= 6:
+                            almost_win = AlmostWin(self.objectives)
+                            self.window.show_view(almost_win)  
+                        else:
+                            not_close_to_win = NotCloseToWin(self.objectives)
+                            self.window.show_view(not_close_to_win)
+
+                # handles objectives
+                elif self.scene[LAYER_NAME_OBJECTIVE] in collision.sprite_lists:
+                    if self.level == 1:
+                        self.level_1_objectives += 1
+                        self.objectives += 1
+                    elif self.level == 2:
+                        self.level_2_objectives += 1
+                        self.objectives += 1
+                    elif self.level == 3:
+                        self.level_3_objectives += 1
+                        self.objectives += 1
+                    collision.remove_from_sprite_lists()
+                    arcade.play_sound(self.collect_coin_sound)
+                    print(self.objectives)
+                    
+                    
         
        
         # Position the camera
@@ -768,20 +806,75 @@ class GameOverView(arcade.View):
         game_view = MyGame()
         self.window.show_view(game_view)
 
+class NotCloseToWin(arcade.View):
+
+    def __init__(self, objectives):
+        super().__init__()
+        self.objectives = objectives
+        
+
+    def on_show_view(self):
+        """Called when switching to this view"""
+        arcade.set_background_color(arcade.color.DARK_GREEN)
+    
+    def on_draw(self):
+        self.clear()
+        arcade.draw_text(
+            f"try again - You've finished the game but only collected {self.objectives} out of 9 gems.",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2,
+                arcade.color.WHITE,
+                30,
+                anchor_x="center",
+            )
+    
+    def on_mouse_press(self, _x, _y, _button, _modifiers):
+        """Use a mouse press to advance to the 'game' view."""
+        game_view = MyGame()
+        self.window.show_view(game_view)
+
+class AlmostWin(arcade.View):
+
+    def __init__(self, objectives):
+        super().__init__()
+        self.objectives = objectives
+
+    def on_show_view(self):
+        """Called when switching to this view"""
+        arcade.set_background_color(arcade.color.DARK_GREEN)
+    
+    def on_draw(self):
+        self.clear()
+        arcade.draw_text(
+            f"Good Job - You've collected {self.objectives} out of 9 gems.",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2,
+                arcade.color.WHITE,
+                30,
+                anchor_x="center",
+            )
+
+    def on_mouse_press(self, _x, _y, _button, _modifiers):
+        """Use a mouse press to advance to the 'game' view."""
+        arcade.close_window()
 
 
 class Win(arcade.View):
     """Class to manage the game overview"""
+
+    def __init__(self, objectives):
+        super().__init__()
+        self.objectives = objectives
 
     def on_show_view(self):
         """Called when switching to this view"""
         arcade.set_background_color(arcade.color.DARK_GREEN)
 
     def on_draw(self):
-        """Draw the game overview"""
+        """Draw the game overview"""    
         self.clear()
         arcade.draw_text(
-            "You Win! - great job",
+            f"You Win! - You've collected {self.objectives} out of 9 gems.",
             SCREEN_WIDTH / 2,
             SCREEN_HEIGHT / 2,
             arcade.color.WHITE,
