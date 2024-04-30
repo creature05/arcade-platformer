@@ -1,6 +1,7 @@
 import os
 import math
 import arcade
+import win_views
 
 # Constants
 SCREEN_WIDTH = 1000
@@ -751,13 +752,13 @@ class MyGame(arcade.View):
                         self.setup()
                     else:
                         if self.objectives >= 9:    
-                            win = Win(self.objectives)
+                            win = win_views.Win(self.objectives)
                             self.window.show_view(win)
                         elif self.objectives >= 6:
-                            almost_win = AlmostWin(self.objectives)
+                            almost_win = win_views.AlmostWin(self.objectives)
                             self.window.show_view(almost_win)  
                         else:
-                            not_close_to_win = NotCloseToWin(self.objectives)
+                            not_close_to_win = win_views.NotCloseToWin(self.objectives)
                             self.window.show_view(not_close_to_win)
 
                 # handles objectives
@@ -805,86 +806,6 @@ class GameOverView(arcade.View):
         """Use a mouse press to advance to the 'game' view."""
         game_view = MyGame()
         self.window.show_view(game_view)
-
-class NotCloseToWin(arcade.View):
-
-    def __init__(self, objectives):
-        super().__init__()
-        self.objectives = objectives
-        
-
-    def on_show_view(self):
-        """Called when switching to this view"""
-        arcade.set_background_color(arcade.color.DARK_GREEN)
-    
-    def on_draw(self):
-        self.clear()
-        arcade.draw_text(
-            f"try again - You've finished the game but only collected {self.objectives} out of 9 gems.",
-                SCREEN_WIDTH / 2,
-                SCREEN_HEIGHT / 2,
-                arcade.color.WHITE,
-                30,
-                anchor_x="center",
-            )
-    
-    def on_mouse_press(self, _x, _y, _button, _modifiers):
-        """Use a mouse press to advance to the 'game' view."""
-        game_view = MyGame()
-        self.window.show_view(game_view)
-
-class AlmostWin(arcade.View):
-
-    def __init__(self, objectives):
-        super().__init__()
-        self.objectives = objectives
-
-    def on_show_view(self):
-        """Called when switching to this view"""
-        arcade.set_background_color(arcade.color.DARK_GREEN)
-    
-    def on_draw(self):
-        self.clear()
-        arcade.draw_text(
-            f"Good Job - You've collected {self.objectives} out of 9 gems.",
-                SCREEN_WIDTH / 2,
-                SCREEN_HEIGHT / 2,
-                arcade.color.WHITE,
-                30,
-                anchor_x="center",
-            )
-
-    def on_mouse_press(self, _x, _y, _button, _modifiers):
-        """Use a mouse press to advance to the 'game' view."""
-        arcade.close_window()
-
-
-class Win(arcade.View):
-    """Class to manage the game overview"""
-
-    def __init__(self, objectives):
-        super().__init__()
-        self.objectives = objectives
-
-    def on_show_view(self):
-        """Called when switching to this view"""
-        arcade.set_background_color(arcade.color.DARK_GREEN)
-
-    def on_draw(self):
-        """Draw the game overview"""    
-        self.clear()
-        arcade.draw_text(
-            f"You Win! - You've collected {self.objectives} out of 9 gems.",
-            SCREEN_WIDTH / 2,
-            SCREEN_HEIGHT / 2,
-            arcade.color.WHITE,
-            30,
-            anchor_x="center",
-        )
-
-    def on_mouse_press(self, _x, _y, _button, _modifiers):
-        """Use a mouse press to advance to the 'game' view."""
-        arcade.close_window()
 
 
 def main():
