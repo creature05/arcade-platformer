@@ -290,6 +290,11 @@ class MyGame(arcade.View):
 
         self.level_3_objectives = 0
 
+        # player health
+        self.player_health = 3
+
+        self.damage_timer = 0
+
         # Where is the right edge of the map?
         self.end_of_map = 0
 
@@ -460,6 +465,7 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
+                  
 
     def process_keychange(self):
         """
@@ -562,6 +568,12 @@ class MyGame(arcade.View):
             self.invincible_timer -= delta_time
         elif self.invincible_timer <= 0:
             self.invincible_timer = 0
+
+        # Creates a cool down timer after taking damage
+        if self.damage_timer > 0:
+            self.damage_timer -= delta_time
+        elif self.damage_timer <= 0:
+            self.damage_timer = 0
 
         # Did the player fall off the map?
         if self.player_sprite.center_y < -100:
@@ -736,11 +748,18 @@ class MyGame(arcade.View):
                         collision.remove_from_sprite_lists()
                         self.score += 100
                         arcade.play_sound(self.hit_sound)
+                    elif self.damage_timer > 0:
+                        pass
                     else:
-                        arcade.play_sound(self.game_over)
-                        game_over = GameOverView()
-                        self.window.show_view(game_over)
-                        return
+                        self.player_health -= 1
+                        arcade.play_sound(self.hit_sound)
+                        self.damage_timer += 1
+                        print(self.player_health)
+                        if self.player_health <= 0:
+                            arcade.play_sound(self.game_over)
+                            game_over = GameOverView()
+                            self.window.show_view(game_over)
+                    
 
         
                 # handles changing levels
