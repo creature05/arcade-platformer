@@ -236,11 +236,10 @@ class MainMenu(arcade.View):
         self.window.show_view(game_view)
 
 class Heart(arcade.Sprite):
-    def __init__(self, filename, scaling, position):
+    def __init__(self, filename, scaling):
         super().__init__(filename, scaling)
-        self.position = position
         
-
+        
 
 class MyGame(arcade.View):
     """
@@ -266,7 +265,8 @@ class MyGame(arcade.View):
 
         # Create hearts based on player's initial health
         for i in range(self.player_health):
-            heart = Heart(":resources:images/items/heart.png", HEART_SCALE, (10 + (i * (heart.width * HEART_SCALE + HEART_PADDING)), SCREEN_HEIGHT - 10))
+            heart = Heart("./assets/images/HUD/hudHeart_full.png", HEART_SCALE)
+            self.position = heart.width
             self.hearts.append(heart)
 
         # Track the current state of what key is pressed
