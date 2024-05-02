@@ -41,6 +41,10 @@ PLAYER_START_Y = 7
 RIGHT_FACING = 0
 LEFT_FACING = 1
 
+# Constants for hearts
+HEART_SCALE = 0.05
+HEART_PADDING = 10
+
 # Layer names from our tilemap
 LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
 LAYER_NAME_PLATFORMS = "Platforms"
@@ -231,6 +235,12 @@ class MainMenu(arcade.View):
         game_view = MyGame()
         self.window.show_view(game_view)
 
+class Heart(arcade.Sprite):
+    def __init__(self, filename, scaling, position):
+        super().__init__(filename, scaling)
+        self.position = position
+        
+
 
 class MyGame(arcade.View):
     """
@@ -245,6 +255,19 @@ class MyGame(arcade.View):
         # Set the path to start with this program
         self.file_path = os.path.dirname(os.path.abspath(__file__))
         os.chdir(self.file_path)
+
+        # List to hold heart sprites
+        self.hearts = []
+
+        # player health
+        self.player_health = 3
+
+        self.damage_timer = 0
+
+        # Create hearts based on player's initial health
+        for i in range(self.player_health):
+            heart = Heart(":resources:images/items/heart.png", HEART_SCALE, (10 + (i * (heart.width * HEART_SCALE + HEART_PADDING)), SCREEN_HEIGHT - 10))
+            self.hearts.append(heart)
 
         # Track the current state of what key is pressed
         self.left_pressed = False
@@ -290,10 +313,6 @@ class MyGame(arcade.View):
 
         self.level_3_objectives = 0
 
-        # player health
-        self.player_health = 3
-
-        self.damage_timer = 0
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -428,8 +447,21 @@ class MyGame(arcade.View):
     def on_show_view(self):
         self.setup()
 
+    def draw_hearts(self):
+        for heart in self.hearts:
+            heart.draw()
+
+    def update_hearts(self):
+        # Update hearts based on player's current health
+        for i in range(len(self.hearts)):
+            if i >= self.player_health:
+                self.hearts[i].remove_from_sprite_lists()
+
     def on_draw(self):
         """Render the screen."""
+
+        # Draw hearts
+        self.draw_hearts()
 
         # Activate the camera
         self.camera.use()
@@ -562,6 +594,9 @@ class MyGame(arcade.View):
 
         # Move the player with the physics engine
         self.physics_engine.update()
+
+        # Update hearts
+        self.update_hearts()
 
         # Creates a timer for the invincible power up
         if self.invincible_timer > 0:
