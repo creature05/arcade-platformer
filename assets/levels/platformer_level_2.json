@@ -150,6 +150,24 @@
                  "width":128,
                  "x":2559.76237623762,
                  "y":1895.68316831683
+                }, 
+                {
+                 "gid":75,
+                 "height":128,
+                 "id":29,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"health"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2820.61538461538,
+                 "y":1910.15384615385
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -482,7 +500,7 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":29,
+ "nextobjectid":30,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -493,7 +511,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":75,
+         "firstgid":77,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,

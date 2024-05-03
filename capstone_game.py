@@ -773,6 +773,14 @@ class MyGame(arcade.View):
                         self.invincible_timer += 8
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
+                    elif power_up_type == "health":
+                        if self.player_health >= 3:
+                            pass
+                        else:
+                            self.player_health += 1
+                            print(self.player_health)
+                            collision.remove_from_sprite_lists()
+                            arcade.play_sound(self.collect_coin_sound)
                     else:
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
