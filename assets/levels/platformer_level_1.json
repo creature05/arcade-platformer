@@ -169,7 +169,7 @@
                         {
                          "name":"boundary_bottom",
                          "type":"float",
-                         "value":640
+                         "value":200
                         }, 
                         {
                          "name":"boundary_top",
@@ -438,7 +438,7 @@
          "source":"arcade_platformer.tsj"
         }, 
         {
-         "firstgid":75,
+         "firstgid":77,
          "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
