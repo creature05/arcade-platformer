@@ -43,7 +43,6 @@ LEFT_FACING = 1
 
 # Constants for hearts
 HEART_SCALE = 0.05
-HEART_PADDING = 10
 
 # Layer names from our tilemap
 LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
