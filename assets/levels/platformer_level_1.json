@@ -94,25 +94,7 @@
          "draworder":"topdown",
          "id":12,
          "name":"Power Up",
-         "objects":[
-                {
-                 "gid":77,
-                 "height":128,
-                 "id":47,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"double jump"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1147.42655616293,
-                 "y":1665.12854875683
-                }],
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
