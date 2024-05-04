@@ -329,6 +329,9 @@ class MyGame(arcade.View):
         # super speed timer 
         self.speed_timer = 0
 
+        # super jump timer
+        self.jump_timer = 0
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
         self.jump_sound = arcade.load_sound(":resources:sounds/jump1.wav")
@@ -523,9 +526,16 @@ class MyGame(arcade.View):
                 self.player_sprite.change_y = PLAYER_MOVEMENT_SPEED
             elif (
                 self.physics_engine.can_jump(y_distance=10)
-                and not self.jump_needs_reset
+                and not self.jump_needs_reset and self.jump_timer <= 0
             ):
                 self.player_sprite.change_y = PLAYER_JUMP_SPEED
+                self.jump_needs_reset = True
+                arcade.play_sound(self.jump_sound)
+            elif (
+                self.physics_engine.can_jump(y_distance=10)
+                and not self.jump_needs_reset
+            ):
+                self.player_sprite.change_y = PLAYER_JUMP_SPEED * 1.5
                 self.jump_needs_reset = True
                 arcade.play_sound(self.jump_sound)
         elif self.down_pressed and not self.up_pressed:
@@ -635,6 +645,12 @@ class MyGame(arcade.View):
             self.speed_timer -= delta_time
         elif self.speed_timer <= 0:
             self.speed_timer = 0
+
+        # Creates a timer for the super jump ability
+        if self.jump_timer > 0:
+            self.jump_timer -= delta_time
+        elif self.jump_timer <= 0:
+            self.jump_timer = 0
 
         # Did the player fall off the map?
         if self.player_sprite.center_y < -100:
@@ -814,6 +830,11 @@ class MyGame(arcade.View):
                         self.speed_timer += 5
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
+                    elif power_up_type == "super jump":
+                        self.jump_timer += 5
+                        collision.remove_from_sprite_lists()
+                        arcade.play_sound(self.collect_coin_sound)
+
                         
                     else:
                         collision.remove_from_sprite_lists()
