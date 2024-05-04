@@ -321,7 +321,7 @@ class MyGame(arcade.View):
         self.shoot_timer = 0
 
         # Level
-        self.level = 1
+        self.level = 3
 
         # Invincible timer
         self.invincible_timer = 0
@@ -509,6 +509,18 @@ class MyGame(arcade.View):
             speed_timer_text = f"Super Speed: {int(self.speed_timer)}"
             arcade.draw_text(
                 speed_timer_text,
+                10,
+                70,
+                arcade.csscolor.BLACK,
+                18,
+            )
+        
+        if self.jump_timer <= 0:
+            pass
+        else:
+            jump_timer_text = f"Super Jump: {int(self.jump_timer)}"
+            arcade.draw_text(
+                jump_timer_text,
                 10,
                 70,
                 arcade.csscolor.BLACK,
@@ -863,7 +875,7 @@ class MyGame(arcade.View):
         
                 # handles changing levels
                 elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
-                    if self.level < 3:
+                    if self.level < 4:
                         level_score_key = f"level_{self.level}_score"
                         self.__dict__[level_score_key] = self.__dict__.get(level_score_key, 0) + self.score
                         self.level += 1
@@ -888,6 +900,9 @@ class MyGame(arcade.View):
                         self.level_2_objectives += 1
                         self.objectives += 1
                     elif self.level == 3:
+                        self.level_3_objectives += 1
+                        self.objectives += 1
+                    elif self.level == 4:
                         self.level_3_objectives += 1
                         self.objectives += 1
                     collision.remove_from_sprite_lists()
