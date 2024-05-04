@@ -326,6 +326,9 @@ class MyGame(arcade.View):
         # Invincible timer
         self.invincible_timer = 0
 
+        # super speed timer 
+        self.speed_timer = 0
+
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
         self.jump_sound = arcade.load_sound(":resources:sounds/jump1.wav")
@@ -496,6 +499,18 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
+        
+        if self.speed_timer <= 0:
+            pass
+        else:
+            speed_timer_text = f"Super Speed: {int(self.speed_timer)}"
+            arcade.draw_text(
+                speed_timer_text,
+                10,
+                70,
+                arcade.csscolor.BLACK,
+                18,
+            )
                   
 
     def process_keychange(self):
@@ -526,9 +541,15 @@ class MyGame(arcade.View):
 
         # Process left/right
         if self.right_pressed and not self.left_pressed:
-            self.player_sprite.change_x = PLAYER_MOVEMENT_SPEED
+            if self.speed_timer <= 0:
+                self.player_sprite.change_x = PLAYER_MOVEMENT_SPEED
+            else:
+                self.player_sprite.change_x = PLAYER_MOVEMENT_SPEED * 2
         elif self.left_pressed and not self.right_pressed:
-            self.player_sprite.change_x = -PLAYER_MOVEMENT_SPEED
+            if self.speed_timer <= 0:
+                self.player_sprite.change_x = -PLAYER_MOVEMENT_SPEED
+            else:
+                self.player_sprite.change_x = -PLAYER_MOVEMENT_SPEED * 2
         else:
             self.player_sprite.change_x = 0
 
@@ -608,6 +629,12 @@ class MyGame(arcade.View):
             self.damage_timer -= delta_time
         elif self.damage_timer <= 0:
             self.damage_timer = 0
+        
+        # Creates a timer for super speed power up
+        if self.speed_timer > 0:
+            self.speed_timer -= delta_time
+        elif self.speed_timer <= 0:
+            self.speed_timer = 0
 
         # Did the player fall off the map?
         if self.player_sprite.center_y < -100:
@@ -739,7 +766,7 @@ class MyGame(arcade.View):
             ):
                 bullet.remove_from_sprite_lists()
 
-        # See if we hit any coins
+        
         if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL or LAYER_NAME_OBJECTIVE in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
@@ -781,9 +808,17 @@ class MyGame(arcade.View):
                             print(self.player_health)
                             collision.remove_from_sprite_lists()
                             arcade.play_sound(self.collect_coin_sound)
+                    elif power_up_type == "double jump":
+                        pass
+                    elif power_up_type == "speed":
+                        self.speed_timer += 5
+                        collision.remove_from_sprite_lists()
+                        arcade.play_sound(self.collect_coin_sound)
+                        
                     else:
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
+                
 
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
                     if self.invincible_timer > 0:  
@@ -801,7 +836,8 @@ class MyGame(arcade.View):
                             arcade.play_sound(self.game_over)
                             game_over = GameOverView()
                             self.window.show_view(game_over)
-                    
+
+                                    
 
         
                 # handles changing levels
