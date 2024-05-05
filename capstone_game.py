@@ -155,6 +155,16 @@ class ZombieEnemy(Enemy):
 
         self.health = 50
 
+class SuperZombie(Enemy):
+    def __init__(self,):
+
+        # set up parent class
+        super().__init__("zombie", "zombie")
+
+        self.scale = CHARACTER_SCALING * 2
+        self.health = 1000
+
+
 
 class PlayerCharacter(Entity):
     """Player Sprite"""
@@ -312,6 +322,8 @@ class MyGame(arcade.View):
 
         self.level_3_objectives = 0
 
+        self.level_4_objectives = 0
+
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -321,7 +333,7 @@ class MyGame(arcade.View):
         self.shoot_timer = 0
 
         # Level
-        self.level = 3
+        self.level = 1
 
         # Invincible timer
         self.invincible_timer = 0
@@ -418,6 +430,8 @@ class MyGame(arcade.View):
                     enemy = RobotEnemy()
                 elif enemy_type == "zombie":
                     enemy = ZombieEnemy()
+                elif enemy_type == "super zombie":
+                    enemy = SuperZombie()
                 enemy.center_x = math.floor(
                     cartesian[0] * TILE_SCALING * self.tile_map.tile_width
                 )
@@ -881,10 +895,10 @@ class MyGame(arcade.View):
                         self.level += 1
                         self.setup()
                     else:
-                        if self.objectives >= 9:    
+                        if self.objectives >= 12:    
                             win = win_views.Win(self.objectives)
                             self.window.show_view(win)
-                        elif self.objectives >= 6:
+                        elif self.objectives >= 9:
                             almost_win = win_views.AlmostWin(self.objectives)
                             self.window.show_view(almost_win)  
                         else:
@@ -903,7 +917,7 @@ class MyGame(arcade.View):
                         self.level_3_objectives += 1
                         self.objectives += 1
                     elif self.level == 4:
-                        self.level_3_objectives += 1
+                        self.level_4_objectives += 1
                         self.objectives += 1
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)

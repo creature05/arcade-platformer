@@ -25,7 +25,7 @@ class NotCloseToWin(arcade.View):
                 anchor_x="center",
             )
         arcade.draw_text(
-            f"You've finished the game but only collected {self.objectives} out of 9 gems.",
+            f"You've finished the game but only collected {self.objectives} out of 12 gems.",
                 SCREEN_WIDTH / 2,
                 SCREEN_HEIGHT / 2,
                 arcade.color.WHITE,
@@ -59,7 +59,7 @@ class AlmostWin(arcade.View):
                 anchor_x="center",
             )
         arcade.draw_text(
-            f"You've finished the game and collected {self.objectives} out of 9 gems.",
+            f"You've finished the game and collected {self.objectives} out of 12 gems.",
                 SCREEN_WIDTH / 2,
                 SCREEN_HEIGHT / 2,
                 arcade.color.WHITE,
@@ -95,7 +95,7 @@ class Win(arcade.View):
             anchor_x="center",
         )
         arcade.draw_text(
-            f"You've finished the game and collected all 9 gems, great job.",
+            f"You've finished the game and collected all 12 gems, great job.",
                 SCREEN_WIDTH / 2,
                 SCREEN_HEIGHT / 2,
                 arcade.color.WHITE,
