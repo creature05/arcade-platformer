@@ -915,8 +915,11 @@ class MyGame(arcade.View):
                     self.buttons += 1
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.hit_sound)
-                    # if self.buttons >= 1:
-                    #     if self.scene[LAYER_NAME_PLATFORMS]:
+                    if self.buttons >= 3:
+                        for sprite in self.scene[LAYER_NAME_PLATFORMS]:
+                            sprite.remove_from_sprite_lists()
+                        
+                        
                             
                         
                                            
