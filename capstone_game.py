@@ -57,6 +57,7 @@ LAYER_NAME_DONT_TOUCH = "Don't Touch"
 LAYER_NAME_POWER_UP = "Power Up"
 LAYER_NAME_END_LEVEL = "End Level"
 LAYER_NAME_OBJECTIVE = "Objective"
+LAYER_NAME_INTERACTIVE = "Interactive"
 
 def load_texture_pair(filename):
     """
@@ -163,6 +164,15 @@ class SuperZombie(Enemy):
 
         self.scale = CHARACTER_SCALING * 2
         self.health = 1000
+
+class SuperRobot(Enemy):
+    def __init__(self,):
+
+        # set up parent class
+        super().__init__("robot", "robot")
+
+        self.scale = CHARACTER_SCALING * 3
+        self.health = 10000
 
 
 
@@ -324,6 +334,8 @@ class MyGame(arcade.View):
 
         self.level_4_objectives = 0
 
+        self.level_5_objectives = 0
+
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -333,7 +345,7 @@ class MyGame(arcade.View):
         self.shoot_timer = 0
 
         # Level
-        self.level = 1
+        self.level = 5
 
         # Invincible timer
         self.invincible_timer = 0
@@ -343,6 +355,10 @@ class MyGame(arcade.View):
 
         # super jump timer
         self.jump_timer = 0
+
+        # keep track of buttons pressed
+        self.buttons = 0
+
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
@@ -386,6 +402,9 @@ class MyGame(arcade.View):
                 "use_spatial_hash": True
             },
             LAYER_NAME_OBJECTIVE: {
+                "use_spatial_hash": True
+            },
+            LAYER_NAME_INTERACTIVE: {
                 "use_spatial_hash": True
             }
         }
@@ -432,6 +451,8 @@ class MyGame(arcade.View):
                     enemy = ZombieEnemy()
                 elif enemy_type == "super zombie":
                     enemy = SuperZombie()
+                elif enemy_type == "super robot":
+                    enemy = SuperRobot()
                 enemy.center_x = math.floor(
                     cartesian[0] * TILE_SCALING * self.tile_map.tile_width
                 )
@@ -781,7 +802,7 @@ class MyGame(arcade.View):
                 [
                     self.scene[LAYER_NAME_ENEMIES],
                     self.scene[LAYER_NAME_PLATFORMS],
-                    self.scene[LAYER_NAME_MOVING_PLATFORMS],
+                    self.scene[LAYER_NAME_MOVING_PLATFORMS]
                 ],
             )
 
@@ -795,7 +816,12 @@ class MyGame(arcade.View):
 
                         if collision.health <= 0:
                             collision.remove_from_sprite_lists()
-                            self.score += 100
+                            if "Points" not in collision.properties:
+                                pass
+                            else:
+                                enemy_points = int(collision.properties["Points"])
+                                self.score += enemy_points
+                            
 
                         # Hit sound
                         arcade.play_sound(self.hit_sound)
@@ -817,7 +843,8 @@ class MyGame(arcade.View):
                 self.scene[LAYER_NAME_COINS], 
                 self.scene[LAYER_NAME_POWER_UP], 
                 self.scene[LAYER_NAME_END_LEVEL],
-                self.scene[LAYER_NAME_OBJECTIVE]
+                self.scene[LAYER_NAME_OBJECTIVE],
+                self.scene[LAYER_NAME_INTERACTIVE]
                 ]
             )
        
@@ -884,12 +911,20 @@ class MyGame(arcade.View):
                             game_over = GameOverView()
                             self.window.show_view(game_over)
 
-                                    
+                elif self.scene[LAYER_NAME_INTERACTIVE] in collision.sprite_lists:
+                    self.buttons += 1
+                    collision.remove_from_sprite_lists()
+                    arcade.play_sound(self.hit_sound)
+                    # if self.buttons >= 1:
+                    #     if self.scene[LAYER_NAME_PLATFORMS]:
+                            
+                        
+                                           
 
         
                 # handles changing levels
                 elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
-                    if self.level < 4:
+                    if self.level < 5:
                         level_score_key = f"level_{self.level}_score"
                         self.__dict__[level_score_key] = self.__dict__.get(level_score_key, 0) + self.score
                         self.level += 1
@@ -918,6 +953,9 @@ class MyGame(arcade.View):
                         self.objectives += 1
                     elif self.level == 4:
                         self.level_4_objectives += 1
+                        self.objectives += 1
+                    elif self.level == 5:
+                        self.level_5_objectives += 1
                         self.objectives += 1
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)

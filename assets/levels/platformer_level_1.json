@@ -425,8 +425,22 @@
          "visible":true,
          "x":0,
          "y":0
+        }, 
+        {
+         "compression":"zlib",
+         "data":"eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=",
+         "encoding":"base64",
+         "height":20,
+         "id":15,
+         "name":"Interactive",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":15,
+ "nextlayerid":16,
  "nextobjectid":52,
  "orientation":"orthogonal",
  "renderorder":"right-down",

@@ -1,221 +1,29 @@
-{ "backgroundcolor":"#91e5e4",
+{ "backgroundcolor":"#3c3c3c",
  "compressionlevel":-1,
  "height":20,
  "infinite":false,
  "layers":[
         {
-         "draworder":"topdown",
-         "id":5,
-         "name":"Enemies",
-         "objects":[
-                {
-                 "height":0,
-                 "id":18,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":100
-                        }, 
-                        {
-                         "name":"boundary_left",
-                         "type":"int",
-                         "value":475
-                        }, 
-                        {
-                         "name":"boundary_right",
-                         "type":"int",
-                         "value":1000
-                        }, 
-                        {
-                         "name":"change_x",
-                         "type":"int",
-                         "value":1
-                        }, 
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"robot"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1460.17699115044,
-                 "y":523.598820058997
-                }, 
-                {
-                 "height":0,
-                 "id":19,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":50
-                        }, 
-                        {
-                         "name":"boundary_left",
-                         "type":"int",
-                         "value":900
-                        }, 
-                        {
-                         "name":"boundary_right",
-                         "type":"int",
-                         "value":1075
-                        }, 
-                        {
-                         "name":"change_x",
-                         "type":"int",
-                         "value":1
-                        }, 
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"zombie"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1980.08849557522,
-                 "y":1205.75221238938
-                }, 
-                {
-                 "height":0,
-                 "id":20,
-                 "name":"",
-                 "point":true,
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":50
-                        }, 
-                        {
-                         "name":"boundary_left",
-                         "type":"int",
-                         "value":580
-                        }, 
-                        {
-                         "name":"boundary_right",
-                         "type":"int",
-                         "value":825
-                        }, 
-                        {
-                         "name":"change_x",
-                         "type":"int",
-                         "value":1
-                        }, 
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"zombie"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":0,
-                 "x":1471.2389380531,
-                 "y":1950.58997050148
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":9,
-         "name":"Power Up",
-         "objects":[
-                {
-                 "gid":51,
-                 "height":128,
-                 "id":23,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"Invincible"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":2559.76237623762,
-                 "y":1895.68316831683
-                }, 
-                {
-                 "gid":75,
-                 "height":128,
-                 "id":29,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"health"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":2820.61538461538,
-                 "y":1910.15384615385
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "draworder":"topdown",
-         "id":11,
-         "name":"End Level",
-         "objects":[
-                {
-                 "gid":72,
-                 "height":128,
-                 "id":25,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":82.1538461538461,
-                 "y":602.461538461538
-                }],
-         "opacity":1,
-         "type":"objectgroup",
-         "visible":true,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJxjYBgFo2AU4AImePAoGAWjYBQMJgAAoVoBbQ==",
-         "encoding":"base64",
-         "height":20,
-         "id":10,
-         "name":"Don't Touch",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":25,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJxjYBgFowABuAlgnoFz2rAFcnjwQAMuBtrFOzcNzKQnoLb7+YFYEIj5qGwusvmcQMwMxBwk2ANzFzEYZj4Mc5CpbxSThwH+ZwQ1",
-         "encoding":"base64",
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 62, 63, 64,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            62, 63, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 62, 63, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 65,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            88, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 89, 90,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55,
+            0, 0, 0, 0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 63, 63, 63, 63, 63,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":20,
          "id":1,
          "name":"Platforms",
@@ -228,9 +36,21 @@
         }, 
         {
          "draworder":"topdown",
-         "id":3,
-         "name":"Bullets",
-         "objects":[],
+         "id":2,
+         "name":"End Level",
+         "objects":[
+                {
+                 "gid":72,
+                 "height":128,
+                 "id":1,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2909.07692307692,
+                 "y":2179.38461538462
+                }],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -239,7 +59,54 @@
         }, 
         {
          "draworder":"topdown",
-         "id":2,
+         "id":3,
+         "name":"Objective",
+         "objects":[
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":4,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":3070.61538461538,
+                 "y":140.923076923077
+                }, 
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":5,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":893.692307692308,
+                 "y":2175.53846153846
+                }, 
+                {
+                 "gid":74,
+                 "height":128,
+                 "id":7,
+                 "name":"",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":-6.30769230769231,
+                 "y":114
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":4,
          "name":"Player",
          "objects":[],
          "opacity":1,
@@ -250,36 +117,26 @@
         }, 
         {
          "draworder":"topdown",
-         "id":4,
-         "name":"Moving Platforms",
+         "id":5,
+         "name":"Power Up",
          "objects":[
                 {
-                 "gid":11,
+                 "gid":75,
                  "height":128,
-                 "id":17,
+                 "id":3,
                  "name":"",
                  "properties":[
                         {
-                         "name":"boundary_left",
-                         "type":"int",
-                         "value":1
-                        }, 
-                        {
-                         "name":"boundary_right",
-                         "type":"int",
-                         "value":350
-                        }, 
-                        {
-                         "name":"change_x",
-                         "type":"float",
-                         "value":1
+                         "name":"type",
+                         "type":"string",
+                         "value":"health"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":513.128607053794,
-                 "y":769.379408621304
+                 "x":1409.07692307692,
+                 "y":398.615384615385
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -288,26 +145,29 @@
          "y":0
         }, 
         {
-         "compression":"zlib",
-         "data":"eJxjYBgFo4A0IDFqx4izYxSMglEw+AEAS04AeQ==",
-         "encoding":"base64",
-         "height":20,
-         "id":6,
-         "name":"Ladders",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":25,
-         "x":0,
-         "y":0
-        }, 
-        {
-         "compression":"zlib",
-         "data":"eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=",
-         "encoding":"base64",
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49,
+            48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48],
          "height":20,
          "id":7,
-         "name":"Background",
+         "name":"Don't Touch",
          "opacity":1,
          "type":"tilelayer",
          "visible":true,
@@ -318,134 +178,83 @@
         {
          "draworder":"topdown",
          "id":8,
-         "name":"Coins",
+         "name":"Enemies",
          "objects":[
                 {
-                 "gid":20,
-                 "height":128,
-                 "id":1,
+                 "height":0,
+                 "id":10,
                  "name":"",
+                 "point":true,
                  "properties":[
                         {
                          "name":"Points",
                          "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1795.41837812162,
-                 "y":1251.99783039184
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":4,
-                 "name":"",
-                 "properties":[
+                         "value":500
+                        }, 
                         {
-                         "name":"Points",
+                         "name":"boundary_left",
                          "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1670.28545206396,
-                 "y":640.576576576572
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":12,
-                 "name":"",
-                 "properties":[
+                         "value":150
+                        }, 
                         {
-                         "name":"Points",
+                         "name":"boundary_right",
                          "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1916.75275406857,
-                 "y":643.862807269967
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":5,
-                 "name":"",
-                 "properties":[
+                         "value":1500
+                        }, 
                         {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1406.27027027027,
-                 "y":651.387387387383
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":6,
-                 "name":"",
-                 "properties":[
+                         "name":"change_x",
+                         "type":"float",
+                         "value":1
+                        }, 
                         {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
+                         "name":"type",
+                         "type":"string",
+                         "value":"super robot"
                         }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
-                 "width":128,
-                 "x":1143.20720720721,
-                 "y":647.783783783779
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":7,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":898.162162162167,
-                 "y":647.783783783779
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":15,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":768.811129713789,
-                 "y":1771.34046309267
+                 "width":0,
+                 "x":1350,
+                 "y":1596.15384615385
                 }],
+         "opacity":1,
+         "properties":[
+                {
+                 "name":"Points",
+                 "type":"int",
+                 "value":1000
+                }, 
+                {
+                 "name":"boundary_left",
+                 "type":"int",
+                 "value":150
+                }, 
+                {
+                 "name":"boundary_right",
+                 "type":"int",
+                 "value":1500
+                }, 
+                {
+                 "name":"change_x",
+                 "type":"float",
+                 "value":1
+                }, 
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"super robot"
+                }],
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":9,
+         "name":"Bullets",
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -454,44 +263,36 @@
         }, 
         {
          "draworder":"topdown",
-         "id":12,
-         "name":"Objective",
+         "id":10,
+         "name":"Moving Platforms",
          "objects":[
                 {
-                 "gid":27,
+                 "gid":65,
                  "height":128,
-                 "id":26,
+                 "id":2,
                  "name":"",
+                 "properties":[
+                        {
+                         "name":"boundary_left",
+                         "type":"int",
+                         "value":250
+                        }, 
+                        {
+                         "name":"boundary_right",
+                         "type":"int",
+                         "value":1300
+                        }, 
+                        {
+                         "name":"change_x",
+                         "type":"float",
+                         "value":1
+                        }],
                  "rotation":0,
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":3066.76923076923,
-                 "y":1902.46153846154
-                }, 
-                {
-                 "gid":27,
-                 "height":128,
-                 "id":27,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":2559.07692307692,
-                 "y":371.692307692308
-                }, 
-                {
-                 "gid":27,
-                 "height":128,
-                 "id":28,
-                 "name":"",
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":382.153846153846,
-                 "y":1029.38461538462
+                 "x":512.923076923077,
+                 "y":560.153846153846
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -500,11 +301,119 @@
          "y":0
         }, 
         {
-         "compression":"zlib",
-         "data":"eJxjYBgFo2AUjIJRMApGwVAHAAfQAAE=",
-         "encoding":"base64",
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 84, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 82, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
          "height":20,
+         "id":11,
+         "name":"Background",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":20,
+         "id":12,
+         "name":"Ladders",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":25,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
          "id":13,
+         "name":"Coins",
+         "objects":[
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":9,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2689.84615384615,
+                 "y":1267.84615384615
+                }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 85, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 81, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 83, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         "height":20,
+         "id":15,
          "name":"Interactive",
          "opacity":1,
          "type":"tilelayer",
@@ -513,8 +422,8 @@
          "x":0,
          "y":0
         }],
- "nextlayerid":14,
- "nextobjectid":30,
+ "nextlayerid":16,
+ "nextobjectid":13,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -532,7 +441,7 @@
          "margin":0,
          "name":"arcade_platformer",
          "spacing":0,
-         "tilecount":77,
+         "tilecount":87,
          "tileheight":128,
          "tiles":[
                 {
@@ -999,12 +908,109 @@
                  "image":"..\/images\/tiles\/mushroomRed.png",
                  "imageheight":128,
                  "imagewidth":128
+                }, 
+                {
+                 "id":77,
+                 "image":"..\/images\/tiles\/mushroomBrown.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":78,
+                 "image":"..\/images\/tiles\/signExit.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":79,
+                 "image":"..\/images\/tiles\/switchBlue_pressed.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":80,
+                 "image":"..\/images\/tiles\/switchBlue.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":81,
+                 "image":"..\/images\/tiles\/switchGreen_pressed.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":82,
+                 "image":"..\/images\/tiles\/switchGreen.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":83,
+                 "image":"..\/images\/tiles\/switchRed_pressed.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":84,
+                 "image":"..\/images\/tiles\/switchRed.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":85,
+                 "image":"..\/images\/tiles\/switchYellow_pressed.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":86,
+                 "image":"..\/images\/tiles\/switchYellow.png",
+                 "imageheight":128,
+                 "imagewidth":128
                 }],
          "tilewidth":128
         }, 
         {
-         "firstgid":78,
-         "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
+         "columns":0,
+         "firstgid":88,
+         "grid":
+            {
+             "height":1,
+             "orientation":"orthogonal",
+             "width":1
+            },
+         "margin":0,
+         "name":"interactive_platforms.tsj",
+         "spacing":0,
+         "tilecount":3,
+         "tileheight":128,
+         "tiles":[
+                {
+                 "id":0,
+                 "image":"..\/images\/ground\/Snow\/snowLeft.png",
+                 "imageheight":128,
+                 "imagewidth":128,
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"disappear"
+                        }]
+                }, 
+                {
+                 "id":1,
+                 "image":"..\/images\/ground\/Snow\/snowMid.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }, 
+                {
+                 "id":2,
+                 "image":"..\/images\/ground\/Snow\/snowRight.png",
+                 "imageheight":128,
+                 "imagewidth":128
+                }],
+         "tilewidth":128
         }],
  "tilewidth":128,
  "type":"map",

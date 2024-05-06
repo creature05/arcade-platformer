@@ -8,157 +8,529 @@
  "margin":0,
  "name":"arcade_platformer",
  "spacing":0,
- "tilecount":25,
+ "tilecount":87,
  "tiledversion":"1.10.2",
  "tileheight":128,
  "tiles":[
         {
          "id":0,
-         "image":"../images\/ground\/Grass\/grass.png",
+         "image":"..\/images\/ground\/Grass\/grass.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":1,
-         "image":"../images\/ground\/Grass\/grassCenter_round.png",
+         "image":"..\/images\/ground\/Grass\/grassCenter_round.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":2,
-         "image":"../images\/ground\/Grass\/grassCenter.png",
+         "image":"..\/images\/ground\/Grass\/grassCenter.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":3,
-         "image":"../images\/ground\/Grass\/grassCliff_left.png",
+         "image":"..\/images\/ground\/Grass\/grassCliff_left.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":4,
-         "image":"../images\/ground\/Grass\/grassCliff_right.png",
+         "image":"..\/images\/ground\/Grass\/grassCliff_right.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":5,
-         "image":"../images\/ground\/Grass\/grassCliffAlt_left.png",
+         "image":"..\/images\/ground\/Grass\/grassCliffAlt_left.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":6,
-         "image":"../images\/ground\/Grass\/grassCliffAlt_right.png",
+         "image":"..\/images\/ground\/Grass\/grassCliffAlt_right.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":7,
-         "image":"../images\/ground\/Grass\/grassCorner_left.png",
+         "image":"..\/images\/ground\/Grass\/grassCorner_left.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":8,
-         "image":"../images\/ground\/Grass\/grassCorner_right.png",
+         "image":"..\/images\/ground\/Grass\/grassCorner_right.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":9,
-         "image":"../images\/ground\/Grass\/grassHalf_left.png",
+         "image":"..\/images\/ground\/Grass\/grassHalf_left.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":10,
-         "image":"../images\/ground\/Grass\/grassHalf_mid.png",
+         "image":"..\/images\/ground\/Grass\/grassHalf_mid.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":11,
-         "image":"../images\/ground\/Grass\/grassHalf_right.png",
+         "image":"..\/images\/ground\/Grass\/grassHalf_right.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":12,
-         "image":"../images\/ground\/Grass\/grassHalf.png",
+         "image":"..\/images\/ground\/Grass\/grassHalf.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":13,
-         "image":"../images\/ground\/Grass\/grassHill_left.png",
+         "image":"..\/images\/ground\/Grass\/grassHill_left.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":14,
-         "image":"../images\/ground\/Grass\/grassHill_right.png",
+         "image":"..\/images\/ground\/Grass\/grassHill_right.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":15,
-         "image":"../images\/ground\/Grass\/grassLeft.png",
+         "image":"..\/images\/ground\/Grass\/grassLeft.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":16,
-         "image":"../images\/ground\/Grass\/grassMid.png",
+         "image":"..\/images\/ground\/Grass\/grassMid.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":17,
-         "image":"../images\/ground\/Grass\/grassRight.png",
+         "image":"..\/images\/ground\/Grass\/grassRight.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":18,
-         "image":"../images\/items\/coinBronze.png",
+         "image":"..\/images\/items\/coinBronze.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":19,
-         "image":"../images\/items\/coinGold.png",
+         "image":"..\/images\/items\/coinGold.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":20,
-         "image":"../images\/items\/coinSilver.png",
+         "image":"..\/images\/items\/coinSilver.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":21,
-         "image":"../images\/tiles\/doorOpen_mid.png",
+         "image":"..\/images\/tiles\/doorOpen_mid.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":22,
-         "image":"../images\/tiles\/doorOpen_top.png",
+         "image":"..\/images\/tiles\/doorOpen_top.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":23,
-         "image":"../images\/tiles\/ladderMid.png",
+         "image":"..\/images\/tiles\/ladderMid.png",
          "imageheight":128,
          "imagewidth":128
         }, 
         {
          "id":24,
-         "image":"../images\/tiles\/ladderTop.png",
+         "image":"..\/images\/tiles\/ladderTop.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":25,
+         "image":"..\/images\/items\/gemBlue.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":26,
+         "image":"..\/images\/items\/gemRed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":27,
+         "image":"..\/images\/ground\/Planet\/planet.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":28,
+         "image":"..\/images\/ground\/Planet\/planetCenter_rounded.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":29,
+         "image":"..\/images\/ground\/Planet\/planetCenter.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":30,
+         "image":"..\/images\/ground\/Planet\/planetCliff_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":31,
+         "image":"..\/images\/ground\/Planet\/planetCliff_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":32,
+         "image":"..\/images\/ground\/Planet\/planetCliffAlt_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":33,
+         "image":"..\/images\/ground\/Planet\/planetCliffAlt_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":34,
+         "image":"..\/images\/ground\/Planet\/planetCorner_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":35,
+         "image":"..\/images\/ground\/Planet\/planetCorner_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":36,
+         "image":"..\/images\/ground\/Planet\/planetHalf_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":37,
+         "image":"..\/images\/ground\/Planet\/planetHalf_mid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":38,
+         "image":"..\/images\/ground\/Planet\/planetHalf_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":39,
+         "image":"..\/images\/ground\/Planet\/planetHalf.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":40,
+         "image":"..\/images\/ground\/Planet\/planetHill_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":41,
+         "image":"..\/images\/ground\/Planet\/planetHill_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":42,
+         "image":"..\/images\/ground\/Planet\/planetLeft.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":43,
+         "image":"..\/images\/ground\/Planet\/planetMid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":44,
+         "image":"..\/images\/ground\/Planet\/planetRight.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":45,
+         "image":"..\/images\/tiles\/torch1.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":46,
+         "image":"..\/images\/tiles\/torch2.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":47,
+         "image":"..\/images\/tiles\/lava.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":48,
+         "image":"..\/images\/tiles\/lavaTop_high.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":49,
+         "image":"..\/images\/tiles\/lavaTop_low.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":50,
+         "image":"..\/images\/items\/star.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":51,
+         "image":"..\/images\/tiles\/spikes.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":52,
+         "image":"..\/images\/ground\/Snow\/snow.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":53,
+         "image":"..\/images\/ground\/Snow\/snowCenter_rounded.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":54,
+         "image":"..\/images\/ground\/Snow\/snowCenter.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":55,
+         "image":"..\/images\/ground\/Snow\/snowCliff_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":56,
+         "image":"..\/images\/ground\/Snow\/snowCliff_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":57,
+         "image":"..\/images\/ground\/Snow\/snowCliffAlt_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":58,
+         "image":"..\/images\/ground\/Snow\/snowCliffAlt_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":59,
+         "image":"..\/images\/ground\/Snow\/snowCorner_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":60,
+         "image":"..\/images\/ground\/Snow\/snowCorner_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":61,
+         "image":"..\/images\/ground\/Snow\/snowHalf_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":62,
+         "image":"..\/images\/ground\/Snow\/snowHalf_mid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":63,
+         "image":"..\/images\/ground\/Snow\/snowHalf_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":64,
+         "image":"..\/images\/ground\/Snow\/snowHalf.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":65,
+         "image":"..\/images\/ground\/Snow\/snowHill_left.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":66,
+         "image":"..\/images\/ground\/Snow\/snowHill_right.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":67,
+         "image":"..\/images\/ground\/Snow\/snowLeft.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":68,
+         "image":"..\/images\/ground\/Snow\/snowMid.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":69,
+         "image":"..\/images\/ground\/Snow\/snowRight.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":70,
+         "image":"..\/images\/items\/flagGreen1.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":71,
+         "image":"..\/images\/items\/flagRed1.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":72,
+         "image":"..\/images\/items\/flagYellow1.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":73,
+         "image":"..\/images\/items\/gemGreen.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":74,
+         "image":"..\/images\/HUD\/hudHeart_full.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":75,
+         "image":"..\/images\/HUD\/hudHeart_half.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":76,
+         "image":"..\/images\/tiles\/mushroomRed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":77,
+         "image":"..\/images\/tiles\/mushroomBrown.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":78,
+         "image":"..\/images\/tiles\/signExit.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":79,
+         "image":"..\/images\/tiles\/switchBlue_pressed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":80,
+         "image":"..\/images\/tiles\/switchBlue.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":81,
+         "image":"..\/images\/tiles\/switchGreen_pressed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":82,
+         "image":"..\/images\/tiles\/switchGreen.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":83,
+         "image":"..\/images\/tiles\/switchRed_pressed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":84,
+         "image":"..\/images\/tiles\/switchRed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":85,
+         "image":"..\/images\/tiles\/switchYellow_pressed.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":86,
+         "image":"..\/images\/tiles\/switchYellow.png",
          "imageheight":128,
          "imagewidth":128
         }],
