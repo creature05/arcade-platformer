@@ -42,7 +42,7 @@ RIGHT_FACING = 0
 LEFT_FACING = 1
 
 # Constants for hearts
-HEART_SCALE = 0.05
+HEART_SCALE = 0.25
 
 # Layer names from our tilemap
 LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
@@ -175,7 +175,6 @@ class SuperRobot(Enemy):
         self.health = 10000
 
 
-
 class PlayerCharacter(Entity):
     """Player Sprite"""
 
@@ -257,8 +256,7 @@ class MainMenu(arcade.View):
 class Heart(arcade.Sprite):
     def __init__(self, filename, scaling):
         super().__init__(filename, scaling)
-        
-        
+
 
 class MyGame(arcade.View):
     """
@@ -325,7 +323,7 @@ class MyGame(arcade.View):
 
         # Keep track of the objectives
         self.objectives = 0
-        
+
         self.level_1_objectives = 0
 
         self.level_2_objectives = 0
@@ -335,7 +333,6 @@ class MyGame(arcade.View):
         self.level_4_objectives = 0
 
         self.level_5_objectives = 0
-
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -350,7 +347,7 @@ class MyGame(arcade.View):
         # Invincible timer
         self.invincible_timer = 0
 
-        # super speed timer 
+        # super speed timer
         self.speed_timer = 0
 
         # super jump timer
@@ -358,7 +355,6 @@ class MyGame(arcade.View):
 
         # keep track of buttons pressed
         self.buttons = 0
-
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
@@ -488,8 +484,11 @@ class MyGame(arcade.View):
         self.setup()
 
     def draw_hearts(self):
+        xpos = SCREEN_WIDTH-30
         for heart in self.hearts:
+            heart.position = (xpos, 30)
             heart.draw()
+            xpos -= 30
 
     def update_hearts(self):
         # Update hearts based on player's current health
@@ -499,9 +498,6 @@ class MyGame(arcade.View):
 
     def on_draw(self):
         """Render the screen."""
-
-        # Draw hearts
-        self.draw_hearts()
 
         # Activate the camera
         self.camera.use()
@@ -525,6 +521,9 @@ class MyGame(arcade.View):
             18,
         )
 
+        # Draw hearts
+        self.draw_hearts()
+
         # Draw invincible timer
         if self.invincible_timer <= 0:
             pass
@@ -537,7 +536,7 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-        
+
         if self.speed_timer <= 0:
             pass
         else:
@@ -549,7 +548,7 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-        
+
         if self.jump_timer <= 0:
             pass
         else:
@@ -561,7 +560,6 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-                  
 
     def process_keychange(self):
         """
@@ -686,7 +684,7 @@ class MyGame(arcade.View):
             self.damage_timer -= delta_time
         elif self.damage_timer <= 0:
             self.damage_timer = 0
-        
+
         # Creates a timer for super speed power up
         if self.speed_timer > 0:
             self.speed_timer -= delta_time
@@ -716,7 +714,6 @@ class MyGame(arcade.View):
                 game_over = GameOverView()
                 self.window.show_view(game_over)
                 return
-            
 
         # Update animations
         if self.physics_engine.can_jump():
@@ -821,7 +818,6 @@ class MyGame(arcade.View):
                             else:
                                 enemy_points = int(collision.properties["Points"])
                                 self.score += enemy_points
-                            
 
                         # Hit sound
                         arcade.play_sound(self.hit_sound)
@@ -834,7 +830,6 @@ class MyGame(arcade.View):
             ):
                 bullet.remove_from_sprite_lists()
 
-        
         if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL or LAYER_NAME_OBJECTIVE in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
@@ -847,7 +842,7 @@ class MyGame(arcade.View):
                 self.scene[LAYER_NAME_INTERACTIVE]
                 ]
             )
-       
+
             # Loop through each coin we hit (if any) and remove it.
             # see if we hit any enemies.
             for collision in player_collision_list:
@@ -862,7 +857,7 @@ class MyGame(arcade.View):
                     # Remove the coin
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
-                
+
                 elif self.scene[LAYER_NAME_POWER_UP] in collision.sprite_lists:
                     power_up_type = collision.properties["type"]
                     if power_up_type == "Invincible":
@@ -888,11 +883,9 @@ class MyGame(arcade.View):
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
 
-                        
                     else:
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
-                
 
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
                     if self.invincible_timer > 0:  
@@ -918,13 +911,7 @@ class MyGame(arcade.View):
                     if self.buttons >= 3:
                         for sprite in self.scene[LAYER_NAME_PLATFORMS]:
                             sprite.remove_from_sprite_lists()
-                        
-                        
-                            
-                        
-                                           
 
-        
                 # handles changing levels
                 elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
                     if self.level < 5:
@@ -963,10 +950,7 @@ class MyGame(arcade.View):
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
                     print(self.objectives)
-                    
-                    
-        
-       
+
         # Position the camera
         self.center_camera_to_player()
 
