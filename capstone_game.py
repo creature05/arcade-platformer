@@ -485,9 +485,9 @@ class MyGame(arcade.View):
 
     def draw_hearts(self):
         xpos = SCREEN_WIDTH-30
-        for heart in self.hearts:
-            heart.position = (xpos, 30)
-            heart.draw()
+        for i in range(self.player_health):
+            self.hearts[i].position = (xpos, 30)
+            self.hearts[i].draw()
             xpos -= 30
 
     def update_hearts(self):
@@ -671,7 +671,7 @@ class MyGame(arcade.View):
         self.physics_engine.update()
 
         # Update hearts
-        self.update_hearts()
+        # self.update_hearts()
 
         # Creates a timer for the invincible power up
         if self.invincible_timer > 0:
