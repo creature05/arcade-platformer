@@ -490,12 +490,6 @@ class MyGame(arcade.View):
             self.hearts[i].draw()
             xpos -= 30
 
-    def update_hearts(self):
-        # Update hearts based on player's current health
-        for i in range(len(self.hearts)):
-            if i >= self.player_health:
-                self.hearts[i].remove_from_sprite_lists()
-
     def on_draw(self):
         """Render the screen."""
 
@@ -669,9 +663,6 @@ class MyGame(arcade.View):
 
         # Move the player with the physics engine
         self.physics_engine.update()
-
-        # Update hearts
-        # self.update_hearts()
 
         # Creates a timer for the invincible power up
         if self.invincible_timer > 0:
@@ -909,7 +900,10 @@ class MyGame(arcade.View):
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.hit_sound)
                     if self.buttons >= 3:
+                        delete_list = []
                         for sprite in self.scene[LAYER_NAME_PLATFORMS]:
+                            delete_list.append(sprite)
+                        for sprite in delete_list:
                             sprite.remove_from_sprite_lists()
 
                 # handles changing levels
