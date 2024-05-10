@@ -163,7 +163,7 @@ class SuperZombie(Enemy):
         super().__init__("zombie", "zombie")
 
         self.scale = CHARACTER_SCALING * 2
-        self.health = 1000
+        self.health = 300
 
 class SuperRobot(Enemy):
     def __init__(self,):
@@ -303,8 +303,13 @@ class MyGame(arcade.View):
         # Separate variable that holds the player sprite
         self.player_sprite = None
 
+        self.enemy_sprite = None
+
         # Our physics engine
         self.physics_engine = None
+
+        # Enemies physics engine
+        # self.enemy_physics_engine = None
 
         # Camera
         self.camera = None
@@ -333,6 +338,14 @@ class MyGame(arcade.View):
         self.level_4_objectives = 0
 
         self.level_5_objectives = 0
+
+
+
+        # keep track of deaths
+
+        self.tries = 0
+
+
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -418,6 +431,8 @@ class MyGame(arcade.View):
         # Shooting mechanics
         self.can_shoot = True
         self.shoot_timer = 0
+        
+        # self.enemy_sprite = Enemy()
 
         # Set up the player, specifically placing it at these coordinates.
         self.player_sprite = PlayerCharacter()
@@ -478,7 +493,17 @@ class MyGame(arcade.View):
             gravity_constant=GRAVITY,
             ladders=self.scene[LAYER_NAME_LADDERS],
             walls=self.scene[LAYER_NAME_PLATFORMS],
+            
         )
+
+        # create the enemy physics engine
+        # self.enemy_physics_engine = arcade.PhysicsEnginePlatformer(
+        #     self.enemy_sprite,
+        #     platforms=self.scene[LAYER_NAME_MOVING_PLATFORMS],
+        #     gravity_constant=GRAVITY,
+        #     ladders=self.scene[LAYER_NAME_LADDERS],
+        #     walls=self.scene[LAYER_NAME_PLATFORMS],
+        # )
 
     def on_show_view(self):
         self.setup()
@@ -664,6 +689,13 @@ class MyGame(arcade.View):
         # Move the player with the physics engine
         self.physics_engine.update()
 
+
+        # self.enemy_physics_engine.update()
+
+        # Update hearts
+        self.update_hearts()
+
+
         # Creates a timer for the invincible power up
         if self.invincible_timer > 0:
             self.invincible_timer -= delta_time
@@ -701,10 +733,18 @@ class MyGame(arcade.View):
             if self.invincible_timer > 0:
                 pass
             else:
-                arcade.play_sound(self.game_over)
-                game_over = GameOverView()
-                self.window.show_view(game_over)
-                return
+
+                self.tries += 1
+                if self.tries == 3:
+                    arcade.play_sound(self.game_over)
+                    game_over = GameOverView()
+                    self.window.show_view(game_over)
+                elif self.tries < 3:
+                    arcade.play_sound(self.game_over)
+                    respawn = RespawnView()
+                    self.window.show_view(respawn)
+            
+
 
         # Update animations
         if self.physics_engine.can_jump():
@@ -891,9 +931,17 @@ class MyGame(arcade.View):
                         self.damage_timer += 1
                         print(self.player_health)
                         if self.player_health <= 0:
-                            arcade.play_sound(self.game_over)
-                            game_over = GameOverView()
-                            self.window.show_view(game_over)
+                            self.tries += 1
+                            if self.tries == 3:
+                                arcade.play_sound(self.game_over)
+                                game_over = GameOverView()
+                                self.window.show_view(game_over)
+                            elif self.tries < 3:
+                                arcade.play_sound(self.game_over)
+                                respawn = RespawnView()
+                                self.window.show_view(respawn)
+
+
 
                 elif self.scene[LAYER_NAME_INTERACTIVE] in collision.sprite_lists:
                     self.buttons += 1
@@ -901,10 +949,17 @@ class MyGame(arcade.View):
                     arcade.play_sound(self.hit_sound)
                     if self.buttons >= 3:
                         delete_list = []
-                        for sprite in self.scene[LAYER_NAME_PLATFORMS]:
-                            delete_list.append(sprite)
-                        for sprite in delete_list:
-                            sprite.remove_from_sprite_lists()
+
+                        for tile in self.scene[LAYER_NAME_PLATFORMS]:
+                            delete_list.append(tile)
+                        for tile in delete_list:
+                            tile.remove_from_sprite_lists()
+                        
+                        
+                            
+                        
+                                           
+
 
                 # handles changing levels
                 elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
@@ -919,10 +974,13 @@ class MyGame(arcade.View):
                             self.window.show_view(win)
                         elif self.objectives >= 9:
                             almost_win = win_views.AlmostWin(self.objectives)
-                            self.window.show_view(almost_win)  
-                        else:
+                            self.window.show_view(almost_win) 
+                        elif self.objectives >= 6:
                             not_close_to_win = win_views.NotCloseToWin(self.objectives)
-                            self.window.show_view(not_close_to_win)
+                            self.window.show_view(not_close_to_win) 
+                        elif self.objectives == 0:
+                            bad_attempt = win_views.BadAttempt(self.objectives)
+                            self.window.show_view(bad_attempt)
 
                 # handles objectives
                 elif self.scene[LAYER_NAME_OBJECTIVE] in collision.sprite_lists:
@@ -973,6 +1031,30 @@ class GameOverView(arcade.View):
         game_view = MyGame()
         self.window.show_view(game_view)
 
+class RespawnView(arcade.View):
+    """Class to manage the game overview"""
+
+    def on_show_view(self):
+        """Called when switching to this view"""
+        arcade.set_background_color(arcade.color.BLACK)
+
+    def on_draw(self):
+        """Draw the game overview"""
+        self.clear()
+        arcade.draw_text(
+            "You died - Click to restart the level",
+            SCREEN_WIDTH / 2,
+            SCREEN_HEIGHT / 2,
+            arcade.color.WHITE,
+            30,
+            anchor_x="center",
+        )
+
+    def on_mouse_press(self, _x, _y, _button, _modifiers):
+        """Use a mouse press to advance to the 'game' view.""" 
+        game_view = MyGame()
+        self.window.show_view(game_view)
+        
 
 def main():
     """Main function"""
