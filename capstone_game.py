@@ -42,7 +42,7 @@ RIGHT_FACING = 0
 LEFT_FACING = 1
 
 # Constants for hearts
-HEART_SCALE = 0.05
+HEART_SCALE = 0.25
 
 # Layer names from our tilemap
 LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
@@ -175,7 +175,6 @@ class SuperRobot(Enemy):
         self.health = 10000
 
 
-
 class PlayerCharacter(Entity):
     """Player Sprite"""
 
@@ -257,8 +256,7 @@ class MainMenu(arcade.View):
 class Heart(arcade.Sprite):
     def __init__(self, filename, scaling):
         super().__init__(filename, scaling)
-        
-        
+
 
 class MyGame(arcade.View):
     """
@@ -330,7 +328,7 @@ class MyGame(arcade.View):
 
         # Keep track of the objectives
         self.objectives = 0
-        
+
         self.level_1_objectives = 0
 
         self.level_2_objectives = 0
@@ -341,9 +339,12 @@ class MyGame(arcade.View):
 
         self.level_5_objectives = 0
 
+
+
         # keep track of deaths
 
         self.tries = 0
+
 
 
         # Where is the right edge of the map?
@@ -359,7 +360,7 @@ class MyGame(arcade.View):
         # Invincible timer
         self.invincible_timer = 0
 
-        # super speed timer 
+        # super speed timer
         self.speed_timer = 0
 
         # super jump timer
@@ -367,7 +368,6 @@ class MyGame(arcade.View):
 
         # keep track of buttons pressed
         self.buttons = 0
-
 
         # Load sounds
         self.collect_coin_sound = arcade.load_sound(":resources:sounds/coin1.wav")
@@ -509,20 +509,14 @@ class MyGame(arcade.View):
         self.setup()
 
     def draw_hearts(self):
-        for heart in self.hearts:
-            heart.draw()
-
-    def update_hearts(self):
-        # Update hearts based on player's current health
-        for i in range(len(self.hearts)):
-            if i >= self.player_health:
-                self.hearts[i].remove_from_sprite_lists()
+        xpos = SCREEN_WIDTH-30
+        for i in range(self.player_health):
+            self.hearts[i].position = (xpos, 30)
+            self.hearts[i].draw()
+            xpos -= 30
 
     def on_draw(self):
         """Render the screen."""
-
-        # Draw hearts
-        self.draw_hearts()
 
         # Activate the camera
         self.camera.use()
@@ -546,6 +540,9 @@ class MyGame(arcade.View):
             18,
         )
 
+        # Draw hearts
+        self.draw_hearts()
+
         # Draw invincible timer
         if self.invincible_timer <= 0:
             pass
@@ -558,7 +555,7 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-        
+
         if self.speed_timer <= 0:
             pass
         else:
@@ -570,7 +567,7 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-        
+
         if self.jump_timer <= 0:
             pass
         else:
@@ -582,7 +579,6 @@ class MyGame(arcade.View):
                 arcade.csscolor.BLACK,
                 18,
             )
-                  
 
     def process_keychange(self):
         """
@@ -693,10 +689,12 @@ class MyGame(arcade.View):
         # Move the player with the physics engine
         self.physics_engine.update()
 
+
         # self.enemy_physics_engine.update()
 
         # Update hearts
         self.update_hearts()
+
 
         # Creates a timer for the invincible power up
         if self.invincible_timer > 0:
@@ -709,7 +707,7 @@ class MyGame(arcade.View):
             self.damage_timer -= delta_time
         elif self.damage_timer <= 0:
             self.damage_timer = 0
-        
+
         # Creates a timer for super speed power up
         if self.speed_timer > 0:
             self.speed_timer -= delta_time
@@ -735,6 +733,7 @@ class MyGame(arcade.View):
             if self.invincible_timer > 0:
                 pass
             else:
+
                 self.tries += 1
                 if self.tries == 3:
                     arcade.play_sound(self.game_over)
@@ -745,6 +744,7 @@ class MyGame(arcade.View):
                     respawn = RespawnView()
                     self.window.show_view(respawn)
             
+
 
         # Update animations
         if self.physics_engine.can_jump():
@@ -849,7 +849,6 @@ class MyGame(arcade.View):
                             else:
                                 enemy_points = int(collision.properties["Points"])
                                 self.score += enemy_points
-                            
 
                         # Hit sound
                         arcade.play_sound(self.hit_sound)
@@ -862,7 +861,6 @@ class MyGame(arcade.View):
             ):
                 bullet.remove_from_sprite_lists()
 
-        
         if LAYER_NAME_ENEMIES or LAYER_NAME_COINS or LAYER_NAME_POWER_UP or LAYER_NAME_END_LEVEL or LAYER_NAME_OBJECTIVE in self.tile_map.object_lists:
             player_collision_list = arcade.check_for_collision_with_lists(
                 self.player_sprite,
@@ -875,7 +873,7 @@ class MyGame(arcade.View):
                 self.scene[LAYER_NAME_INTERACTIVE]
                 ]
             )
-       
+
             # Loop through each coin we hit (if any) and remove it.
             # see if we hit any enemies.
             for collision in player_collision_list:
@@ -890,7 +888,7 @@ class MyGame(arcade.View):
                     # Remove the coin
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
-                
+
                 elif self.scene[LAYER_NAME_POWER_UP] in collision.sprite_lists:
                     power_up_type = collision.properties["type"]
                     if power_up_type == "Invincible":
@@ -916,11 +914,9 @@ class MyGame(arcade.View):
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
 
-                        
                     else:
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
-                
 
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
                     if self.invincible_timer > 0:  
@@ -953,6 +949,7 @@ class MyGame(arcade.View):
                     arcade.play_sound(self.hit_sound)
                     if self.buttons >= 3:
                         delete_list = []
+
                         for tile in self.scene[LAYER_NAME_PLATFORMS]:
                             delete_list.append(tile)
                         for tile in delete_list:
@@ -963,7 +960,7 @@ class MyGame(arcade.View):
                         
                                            
 
-        
+
                 # handles changing levels
                 elif self.scene[LAYER_NAME_END_LEVEL] in collision.sprite_lists:
                     if self.level < 5:
@@ -1005,10 +1002,7 @@ class MyGame(arcade.View):
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
                     print(self.objectives)
-                  
-                    
-        
-       
+
         # Position the camera
         self.center_camera_to_player()
 
