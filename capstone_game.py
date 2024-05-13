@@ -47,6 +47,7 @@ HEART_SCALE = 0.25
 # Layer names from our tilemap
 LAYER_NAME_MOVING_PLATFORMS = "Moving Platforms"
 LAYER_NAME_PLATFORMS = "Platforms"
+# LAYER_NAME_INTERACTIVE_PLATFORMS = "Interactive Platforms"
 LAYER_NAME_COINS = "Coins"
 LAYER_NAME_BACKGROUND = "Background"
 LAYER_NAME_LADDERS = "Ladders"
@@ -58,6 +59,8 @@ LAYER_NAME_POWER_UP = "Power Up"
 LAYER_NAME_END_LEVEL = "End Level"
 LAYER_NAME_OBJECTIVE = "Objective"
 LAYER_NAME_INTERACTIVE = "Interactive"
+
+# PLATFORMS = [LAYER_NAME_PLATFORMS, LAYER_NAME_INTERACTIVE_PLATFORMS]
 
 def load_texture_pair(filename):
     """
@@ -330,7 +333,7 @@ class MyGame(arcade.View):
         self.objectives = 0
 
         self.level_1_objectives = 0
-
+     
         self.level_2_objectives = 0
 
         self.level_3_objectives = 0
@@ -339,13 +342,9 @@ class MyGame(arcade.View):
 
         self.level_5_objectives = 0
 
-
-
         # keep track of deaths
 
         self.tries = 0
-
-
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -354,8 +353,13 @@ class MyGame(arcade.View):
         self.can_shoot = False
         self.shoot_timer = 0
 
+        # # Enemy shooting mechanics
+        # self.enemy_can_shoot = False
+        # self.enemy_shoot_timer = 0
+       
+
         # Level
-        self.level = 5
+        self.level = 1
 
         # Invincible timer
         self.invincible_timer = 0
@@ -392,6 +396,9 @@ class MyGame(arcade.View):
             LAYER_NAME_PLATFORMS: {
                 "use_spatial_hash": True
             },
+            # LAYER_NAME_INTERACTIVE_PLATFORMS: {
+            #     "use_spatial_hash": True
+            # },
             LAYER_NAME_MOVING_PLATFORMS: {
                 "use_spatial_hash": False
             },
@@ -425,12 +432,7 @@ class MyGame(arcade.View):
         # from the map as spritelists in the scene in the proper order
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
 
-        # Keep track of the score
-        self.score = 0
 
-        # Shooting mechanics
-        self.can_shoot = True
-        self.shoot_timer = 0
         
         # self.enemy_sprite = Enemy()
 
@@ -493,17 +495,8 @@ class MyGame(arcade.View):
             gravity_constant=GRAVITY,
             ladders=self.scene[LAYER_NAME_LADDERS],
             walls=self.scene[LAYER_NAME_PLATFORMS],
-            
         )
 
-        # create the enemy physics engine
-        # self.enemy_physics_engine = arcade.PhysicsEnginePlatformer(
-        #     self.enemy_sprite,
-        #     platforms=self.scene[LAYER_NAME_MOVING_PLATFORMS],
-        #     gravity_constant=GRAVITY,
-        #     ladders=self.scene[LAYER_NAME_LADDERS],
-        #     walls=self.scene[LAYER_NAME_PLATFORMS],
-        # )
 
     def on_show_view(self):
         self.setup()
@@ -693,7 +686,7 @@ class MyGame(arcade.View):
         # self.enemy_physics_engine.update()
 
         # Update hearts
-        self.update_hearts()
+        # self.update_hearts()
 
 
         # Creates a timer for the invincible power up
@@ -733,7 +726,6 @@ class MyGame(arcade.View):
             if self.invincible_timer > 0:
                 pass
             else:
-
                 self.tries += 1
                 if self.tries == 3:
                     arcade.play_sound(self.game_over)
@@ -758,6 +750,38 @@ class MyGame(arcade.View):
         else:
             self.player_sprite.is_on_ladder = False
             self.process_keychange()
+
+        # if self.enemy_can_shoot:
+        #     enemy_type = my_object.properties["type"]
+        #     if enemy_type == "super robot":
+        #         if self.enemy_shoot_timer == SHOOT_SPEED:
+        #             self.enemy_shoot_timer -= delta_time
+        #             arcade.play_sound(self.shoot_sound)
+        #             bullet = arcade.Sprite(
+        #                 ":resources:images/space_shooter/laserBlue01.png",
+        #                 SPRITE_SCALING_LASER,
+        #             )
+
+        #             if self.enemy_sprite.facing_direction == RIGHT_FACING:
+        #                 bullet.change_x = BULLET_SPEED
+        #             else:
+        #                 bullet.change_x = -BULLET_SPEED
+
+        #             bullet.center_x = self.enemy_sprite.center_x
+        #             bullet.center_y = self.enemy_sprite.center_y
+
+        #             self.scene.add_sprite(LAYER_NAME_BULLETS, bullet)
+
+        #             if self.enemy_shoot_timer == 5:
+        #                 self.enemy_can_shoot = False
+        #     else:
+        #         pass
+        # else:
+        #     self.enemy_shoot_timer += 1
+        #     if self.enemy_shoot_timer == SHOOT_SPEED:
+        #         self.enemy_can_shoot = True
+        #         self.enemy_shoot_timer = 0
+
 
         if self.can_shoot:
             if self.shoot_pressed:
@@ -830,6 +854,7 @@ class MyGame(arcade.View):
                 [
                     self.scene[LAYER_NAME_ENEMIES],
                     self.scene[LAYER_NAME_PLATFORMS],
+                    # self.scene[LAYER_NAME_INTERACTIVE_PLATFORMS],
                     self.scene[LAYER_NAME_MOVING_PLATFORMS]
                 ],
             )
@@ -849,6 +874,7 @@ class MyGame(arcade.View):
                             else:
                                 enemy_points = int(collision.properties["Points"])
                                 self.score += enemy_points
+                                print(self.score)
 
                         # Hit sound
                         arcade.play_sound(self.hit_sound)
@@ -950,7 +976,7 @@ class MyGame(arcade.View):
                     if self.buttons >= 3:
                         delete_list = []
 
-                        for tile in self.scene[LAYER_NAME_PLATFORMS]:
+                        for tile in self.scene[LAYER_NAME_MOVING_PLATFORMS]:
                             delete_list.append(tile)
                         for tile in delete_list:
                             tile.remove_from_sprite_lists()
@@ -978,6 +1004,9 @@ class MyGame(arcade.View):
                         elif self.objectives >= 6:
                             not_close_to_win = win_views.NotCloseToWin(self.objectives)
                             self.window.show_view(not_close_to_win) 
+                        elif self.objectives >= 1:
+                            pretty_bad_attempt = win_views.PrettyBadAttempt(self.objectives)
+                            self.window.show_view(pretty_bad_attempt)
                         elif self.objectives == 0:
                             bad_attempt = win_views.BadAttempt(self.objectives)
                             self.window.show_view(bad_attempt)

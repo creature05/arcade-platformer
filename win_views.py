@@ -33,6 +33,36 @@ class BadAttempt(arcade.View):
                 anchor_x="center",
             )
 
+class PrettyBadAttempt(arcade.View):
+
+    def __init__(self, objectives):
+        super().__init__()
+        self.objectives = objectives
+        
+
+    def on_show_view(self):
+        """Called when switching to this view"""
+        arcade.set_background_color(arcade.color.DARK_GREEN)
+    
+    def on_draw(self):
+        self.clear()
+        arcade.draw_text(
+            "Try again!",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 1.5,
+                arcade.color.WHITE,
+                30,
+                anchor_x="center",
+            )
+        arcade.draw_text(
+            f"You've finished the game but only collected {self.objectives} out of 15 gems.",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2,
+                arcade.color.WHITE,
+                25,
+                anchor_x="center",
+            )
+
 class NotCloseToWin(arcade.View):
 
     def __init__(self, objectives):
@@ -47,7 +77,7 @@ class NotCloseToWin(arcade.View):
     def on_draw(self):
         self.clear()
         arcade.draw_text(
-            "try again",
+            "you can do better!",
                 SCREEN_WIDTH / 2,
                 SCREEN_HEIGHT / 1.5,
                 arcade.color.WHITE,
