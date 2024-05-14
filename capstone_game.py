@@ -354,8 +354,8 @@ class MyGame(arcade.View):
         self.shoot_timer = 0
 
         # # Enemy shooting mechanics
-        # self.enemy_can_shoot = False
-        # self.enemy_shoot_timer = 0
+        self.enemy_can_shoot = False
+        self.enemy_shoot_timer = 0
        
 
         # Level
@@ -431,10 +431,8 @@ class MyGame(arcade.View):
         # Initialize scene with our tilemap, this will automatically add all layers
         # from the map as spritelists in the scene in the proper order
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
-
-
         
-        # self.enemy_sprite = Enemy()
+        self.enemy_sprite = Enemy()
 
         # Set up the player, specifically placing it at these coordinates.
         self.player_sprite = PlayerCharacter()
@@ -751,36 +749,37 @@ class MyGame(arcade.View):
             self.player_sprite.is_on_ladder = False
             self.process_keychange()
 
-        # if self.enemy_can_shoot:
-        #     enemy_type = my_object.properties["type"]
-        #     if enemy_type == "super robot":
-        #         if self.enemy_shoot_timer == SHOOT_SPEED:
-        #             self.enemy_shoot_timer -= delta_time
-        #             arcade.play_sound(self.shoot_sound)
-        #             bullet = arcade.Sprite(
-        #                 ":resources:images/space_shooter/laserBlue01.png",
-        #                 SPRITE_SCALING_LASER,
-        #             )
+        if self.enemy_can_shoot:
+            enemy_type = my_object.properties["type"]
+            if enemy_type == "super robot":
+                if self.enemy_shoot_timer == SHOOT_SPEED:
+                    arcade.play_sound(self.shoot_sound)
+                    bullet = arcade.Sprite(
+                        ":resources:images/space_shooter/laserBlue01.png",
+                        SPRITE_SCALING_LASER,
+                    )
 
-        #             if self.enemy_sprite.facing_direction == RIGHT_FACING:
-        #                 bullet.change_x = BULLET_SPEED
-        #             else:
-        #                 bullet.change_x = -BULLET_SPEED
+                    if self.enemy_sprite.facing_direction == RIGHT_FACING:
+                        bullet.change_x = BULLET_SPEED
+                    else:
+                        bullet.change_x = -BULLET_SPEED
 
-        #             bullet.center_x = self.enemy_sprite.center_x
-        #             bullet.center_y = self.enemy_sprite.center_y
+                    bullet.center_x = self.enemy_sprite.center_x
+                    bullet.center_y = self.enemy_sprite.center_y
 
-        #             self.scene.add_sprite(LAYER_NAME_BULLETS, bullet)
+                    self.scene.add_sprite(LAYER_NAME_BULLETS, bullet)
 
-        #             if self.enemy_shoot_timer == 5:
-        #                 self.enemy_can_shoot = False
-        #     else:
-        #         pass
-        # else:
-        #     self.enemy_shoot_timer += 1
-        #     if self.enemy_shoot_timer == SHOOT_SPEED:
-        #         self.enemy_can_shoot = True
-        #         self.enemy_shoot_timer = 0
+                    if self.enemy_shoot_timer == 5:
+                        self.enemy_can_shoot = False
+                    self.enemy_shoot_timer == 0
+
+            else:
+                pass
+        else:
+            self.enemy_shoot_timer += delta_time
+            if self.enemy_shoot_timer == SHOOT_SPEED:
+                self.enemy_can_shoot = True
+                self.enemy_shoot_timer = 0
 
 
         if self.can_shoot:

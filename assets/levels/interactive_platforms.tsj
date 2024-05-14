@@ -7,6 +7,12 @@
     },
  "margin":0,
  "name":"interactive_platforms.tsj",
+ "properties":[
+        {
+         "name":"type",
+         "type":"string",
+         "value":"remove"
+        }],
  "spacing":0,
  "tilecount":3,
  "tiledversion":"1.10.2",

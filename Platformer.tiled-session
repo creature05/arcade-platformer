@@ -1,10 +1,15 @@
 {
-    "activeFile": "assets/levels/platformer_level_1.json",
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "assets/levels/platformer_level_5.json",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "": {
+            "scaleInDock": 1,
             "scaleInEditor": 1
         },
         "#tiles": {
@@ -37,48 +42,138 @@
         },
         "assets/levels/arcade_platformer.tsj": {
             "dynamicWrapping": false,
-            "scaleInDock": 1
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/levels/interactive_platforms.tsj": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.47
         },
         "assets/levels/platformer_level_1.json": {
             "expandedObjectLayers": [
-                2,
                 10,
-                6
+                14,
+                12,
+                6,
+                13,
+                2
             ],
-            "scale": 0.3299,
-            "selectedLayer": 7,
+            "scale": 0.3794,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 2506.8202485601696,
-                "y": 1388.299484692331
+                "x": 1598.5767000527148,
+                "y": 1262.5197680548233
             }
+        },
+        "assets/levels/platformer_level_1.json#arcade_platformer": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
         },
         "assets/levels/platformer_level_2.json": {
             "expandedObjectLayers": [
+                9,
                 5,
-                8,
-                4
+                11,
+                4,
+                12,
+                8
             ],
-            "scale": 0.2712,
-            "selectedLayer": 0,
+            "scale": 0.26,
+            "selectedLayer": 12,
             "viewCenter": {
-                "x": 722.7138643067848,
-                "y": 1261.0619469026549
+                "x": 1598.0769230769229,
+                "y": 1280.7692307692307
             }
+        },
+        "assets/levels/platformer_level_2.json#arcade_platformer": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
         },
         "assets/levels/platformer_level_3.json": {
             "expandedObjectLayers": [
+                9,
                 5,
-                8,
-                4
+                4,
+                10,
+                12,
+                6,
+                13
             ],
-            "scale": 0.3728,
-            "selectedLayer": 0,
+            "scale": 0.32,
+            "selectedLayer": 7,
             "viewCenter": {
-                "x": 1598.7124463519312,
-                "y": 871.7811158798282
+                "x": 1598.4375,
+                "y": 1278.125
             }
         },
+        "assets/levels/platformer_level_3.json#arcade_platformer": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
         "assets/levels/platformer_level_3.json#tiles": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "assets/levels/platformer_level_3.json.tmj": {
+            "expandedObjectLayers": [
+                9,
+                6,
+                4
+            ],
+            "scale": 0.1386,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1879.5093795093792,
+                "y": 2020.2020202020199
+            }
+        },
+        "assets/levels/platformer_level_4.json": {
+            "expandedObjectLayers": [
+                5,
+                11,
+                4,
+                10,
+                12,
+                7
+            ],
+            "scale": 0.2671,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 1602.3961063272181,
+                "y": 1280.419318607263
+            }
+        },
+        "assets/levels/platformer_level_4.json#arcade_platformer": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "assets/levels/platformer_level_4.json#items": {
+            "scaleInDock": 1
+        },
+        "assets/levels/platformer_level_5.json": {
+            "expandedObjectLayers": [
+                3,
+                5,
+                10,
+                8,
+                13,
+                2
+            ],
+            "scale": 0.3212,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 714.508094645081,
+                "y": 1830.6351183063512
+            }
+        },
+        "assets/levels/platformer_level_5.json#arcade_platformer": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/levels/platformer_level_5.json#interactive_platforms.tsj": {
+            "dynamicWrapping": true,
             "scaleInDock": 1
         },
         "assets/platform_level_01.tmx": {
@@ -183,41 +278,50 @@
         },
         "venv/lib/python3.11/site-packages/arcade/resources/tiled_maps/map_with_ladders.json": {
             "expandedObjectLayers": [
-                13,
-                18
+                18,
+                13
             ],
-            "scale": 0.3215,
-            "selectedLayer": 1,
+            "scale": 0.32,
+            "selectedLayer": 5,
             "viewCenter": {
-                "x": 1278.3825816485228,
-                "y": 1085.5365474339035
+                "x": 1279.6875,
+                "y": 1090.625
             }
         },
         "venv/lib/python3.11/site-packages/arcade/resources/tiled_maps/more_tiles.json": {
+            "dynamicWrapping": false,
             "scaleInDock": 1
         }
     },
     "last.imagePath": "/Users/gabe/projects/capstone_game/assets/images/tiles",
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 128,
+    "map.tileWidth": 128,
+    "map.width": 25,
     "openFiles": [
         "assets/levels/platformer_level_1.json",
         "assets/levels/platformer_level_2.json",
         "assets/levels/platformer_level_3.json",
-        "venv/lib/python3.11/site-packages/arcade/resources/tiled_maps/map_with_ladders.json"
+        "assets/levels/platformer_level_4.json",
+        "assets/levels/platformer_level_5.json",
+        "assets/levels/arcade_platformer.tsj"
     ],
     "project": "",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
-        "venv/lib/python3.11/site-packages/arcade/resources/tiled_maps/map_with_ladders.json",
-        "assets/levels/platformer_level_3.json",
-        "assets/levels/platformer_level_2.json",
         "assets/levels/platformer_level_1.json",
+        "assets/levels/platformer_level_2.json",
+        "assets/levels/platformer_level_3.json",
+        "assets/levels/platformer_level_4.json",
+        "assets/levels/arcade_platformer.tsj",
+        "assets/levels/platformer_level_5.json",
+        "assets/levels/interactive_platforms.tsj",
+        "venv/lib/python3.11/site-packages/arcade/resources/tiled_maps/map_with_ladders.json",
+        "assets/levels/platformer_level_3.json.tmj",
         "arcade_platformer.tsj",
         "platformer_level_3.json",
-        "platformer_level_2.json",
-        "platformer_level_1.json",
-        "enemies.tsj",
-        "Platformer.json",
-        "map_1.json",
-        "untitled.tmj"
-    ]
+        "platformer_level_2.json"
+    ],
+    "tileset.lastUsedFormat": "json",
+    "tileset.type": 1
 }

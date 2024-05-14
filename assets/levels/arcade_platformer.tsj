@@ -8,7 +8,7 @@
  "margin":0,
  "name":"arcade_platformer",
  "spacing":0,
- "tilecount":87,
+ "tilecount":88,
  "tiledversion":"1.10.2",
  "tileheight":128,
  "tiles":[
@@ -531,6 +531,12 @@
         {
          "id":86,
          "image":"..\/images\/tiles\/switchYellow.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":87,
+         "image":"..\/images\/tiles\/signLeft.png",
          "imageheight":128,
          "imagewidth":128
         }],
