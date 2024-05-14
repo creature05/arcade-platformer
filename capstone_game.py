@@ -266,7 +266,7 @@ class MyGame(arcade.View):
     Main application class.
     """
 
-    def __init__(self, level = 1):
+    def __init__(self, level = 1, tries = 0):
 
         # Call the parent class and set up the window
         super().__init__()
@@ -344,7 +344,7 @@ class MyGame(arcade.View):
 
         # keep track of deaths
 
-        self.tries = 0
+        self.tries = tries
 
         # Where is the right edge of the map?
         self.end_of_map = 0
@@ -731,7 +731,7 @@ class MyGame(arcade.View):
                     self.window.show_view(game_over)
                 elif self.tries < 3:
                     arcade.play_sound(self.game_over)
-                    respawn = RespawnView(self.level)
+                    respawn = RespawnView(self.level, self.tries)
                     self.window.show_view(respawn)
             
 
@@ -1062,9 +1062,10 @@ class GameOverView(arcade.View):
 class RespawnView(arcade.View):
     """Class to manage the game overview"""
 
-    def __init__(self, level):
+    def __init__(self, level, tries):
         super().__init__()
         self.level = level
+        self.tries = tries
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -1084,7 +1085,7 @@ class RespawnView(arcade.View):
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view.""" 
-        game_view = MyGame(self.level)
+        game_view = MyGame(self.level, self.tries)
         self.window.show_view(game_view)
         
 
