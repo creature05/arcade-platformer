@@ -266,7 +266,7 @@ class MyGame(arcade.View):
     Main application class.
     """
 
-    def __init__(self):
+    def __init__(self, level = 1):
 
         # Call the parent class and set up the window
         super().__init__()
@@ -359,7 +359,7 @@ class MyGame(arcade.View):
        
 
         # Level
-        self.level = 1
+        self.level = level
 
         # Invincible timer
         self.invincible_timer = 0
@@ -432,7 +432,7 @@ class MyGame(arcade.View):
         # from the map as spritelists in the scene in the proper order
         self.scene = arcade.Scene.from_tilemap(self.tile_map)
         
-        self.enemy_sprite = Enemy()
+        # self.enemy_sprite = Enemy()
 
         # Set up the player, specifically placing it at these coordinates.
         self.player_sprite = PlayerCharacter()
@@ -731,7 +731,7 @@ class MyGame(arcade.View):
                     self.window.show_view(game_over)
                 elif self.tries < 3:
                     arcade.play_sound(self.game_over)
-                    respawn = RespawnView()
+                    respawn = RespawnView(self.level)
                     self.window.show_view(respawn)
             
 
@@ -749,37 +749,37 @@ class MyGame(arcade.View):
             self.player_sprite.is_on_ladder = False
             self.process_keychange()
 
-        if self.enemy_can_shoot:
-            enemy_type = my_object.properties["type"]
-            if enemy_type == "super robot":
-                if self.enemy_shoot_timer == SHOOT_SPEED:
-                    arcade.play_sound(self.shoot_sound)
-                    bullet = arcade.Sprite(
-                        ":resources:images/space_shooter/laserBlue01.png",
-                        SPRITE_SCALING_LASER,
-                    )
+        # if self.enemy_can_shoot:
+        #     enemy_type = my_object.properties["type"]
+        #     if enemy_type == "super robot":
+        #         if self.enemy_shoot_timer == SHOOT_SPEED:
+        #             arcade.play_sound(self.shoot_sound)
+        #             bullet = arcade.Sprite(
+        #                 ":resources:images/space_shooter/laserBlue01.png",
+        #                 SPRITE_SCALING_LASER,
+        #             )
 
-                    if self.enemy_sprite.facing_direction == RIGHT_FACING:
-                        bullet.change_x = BULLET_SPEED
-                    else:
-                        bullet.change_x = -BULLET_SPEED
+        #             if self.enemy_sprite.facing_direction == RIGHT_FACING:
+        #                 bullet.change_x = BULLET_SPEED
+        #             else:
+        #                 bullet.change_x = -BULLET_SPEED
 
-                    bullet.center_x = self.enemy_sprite.center_x
-                    bullet.center_y = self.enemy_sprite.center_y
+        #             bullet.center_x = self.enemy_sprite.center_x
+        #             bullet.center_y = self.enemy_sprite.center_y
 
-                    self.scene.add_sprite(LAYER_NAME_BULLETS, bullet)
+        #             self.scene.add_sprite(LAYER_NAME_BULLETS, bullet)
 
-                    if self.enemy_shoot_timer == 5:
-                        self.enemy_can_shoot = False
-                    self.enemy_shoot_timer == 0
+        #             if self.enemy_shoot_timer == 5:
+        #                 self.enemy_can_shoot = False
+        #             self.enemy_shoot_timer == 0
 
-            else:
-                pass
-        else:
-            self.enemy_shoot_timer += delta_time
-            if self.enemy_shoot_timer == SHOOT_SPEED:
-                self.enemy_can_shoot = True
-                self.enemy_shoot_timer = 0
+        #     else:
+        #         pass
+        # else:
+        #     self.enemy_shoot_timer += delta_time
+        #     if self.enemy_shoot_timer == SHOOT_SPEED:
+        #         self.enemy_can_shoot = True
+        #         self.enemy_shoot_timer = 0
 
 
         if self.can_shoot:
@@ -963,7 +963,7 @@ class MyGame(arcade.View):
                                 self.window.show_view(game_over)
                             elif self.tries < 3:
                                 arcade.play_sound(self.game_over)
-                                respawn = RespawnView()
+                                respawn = RespawnView(self.level)
                                 self.window.show_view(respawn)
 
 
@@ -1062,6 +1062,10 @@ class GameOverView(arcade.View):
 class RespawnView(arcade.View):
     """Class to manage the game overview"""
 
+    def __init__(self, level):
+        super().__init__()
+        self.level = level
+
     def on_show_view(self):
         """Called when switching to this view"""
         arcade.set_background_color(arcade.color.BLACK)
@@ -1080,7 +1084,7 @@ class RespawnView(arcade.View):
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view.""" 
-        game_view = MyGame()
+        game_view = MyGame(self.level)
         self.window.show_view(game_view)
         
 
