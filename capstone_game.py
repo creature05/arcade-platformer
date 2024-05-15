@@ -266,7 +266,7 @@ class MyGame(arcade.View):
     Main application class.
     """
 
-    def __init__(self, level = 1, tries = 0):
+    def __init__(self, level = 1, tries = 3):
 
         # Call the parent class and set up the window
         super().__init__()
@@ -531,6 +531,15 @@ class MyGame(arcade.View):
             18,
         )
 
+        life_text = f"Lives: {self.tries}"
+        arcade.draw_text(
+            life_text,
+            10,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
         # Draw hearts
         self.draw_hearts()
 
@@ -724,12 +733,12 @@ class MyGame(arcade.View):
             if self.invincible_timer > 0:
                 pass
             else:
-                self.tries += 1
-                if self.tries == 3:
+                self.tries -= 1
+                if self.tries == 0:
                     arcade.play_sound(self.game_over)
                     game_over = GameOverView()
                     self.window.show_view(game_over)
-                elif self.tries < 3:
+                elif self.tries > 0:
                     arcade.play_sound(self.game_over)
                     respawn = RespawnView(self.level, self.tries)
                     self.window.show_view(respawn)
@@ -956,12 +965,12 @@ class MyGame(arcade.View):
                         self.damage_timer += 1
                         print(self.player_health)
                         if self.player_health <= 0:
-                            self.tries += 1
-                            if self.tries == 3:
+                            self.tries -= 1
+                            if self.tries == 0:
                                 arcade.play_sound(self.game_over)
                                 game_over = GameOverView()
                                 self.window.show_view(game_over)
-                            elif self.tries < 3:
+                            elif self.tries > 0:
                                 arcade.play_sound(self.game_over)
                                 respawn = RespawnView(self.level)
                                 self.window.show_view(respawn)
