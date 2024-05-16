@@ -4,14 +4,14 @@
  "infinite":false,
  "layers":[
         {
-         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+         "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 68, 69, 69, 69, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 193, 194, 0, 0, 194,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 186, 192, 0, 0, 0, 0, 0, 0, 0, 193, 187, 181, 0, 0, 181,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 186, 192, 0, 0, 0, 0, 0, 193, 187, 0, 181, 0, 0, 181,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 186, 195, 195, 195, 195, 195, 187, 0, 0, 181, 0, 0, 181,
-            69, 69, 69, 69, 69, 69, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181, 0, 0, 181,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 181, 195, 195, 181,
+            0, 0, 0, 0, 0, 0, 68, 69, 69, 69, 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 145, 146, 0, 0, 146,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138, 144, 0, 0, 0, 0, 0, 0, 0, 145, 139, 133, 0, 0, 133,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138, 144, 0, 0, 0, 0, 0, 145, 139, 0, 133, 0, 0, 133,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 138, 147, 147, 147, 147, 147, 139, 0, 0, 133, 0, 0, 133,
+            69, 69, 69, 69, 69, 69, 70, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 133, 0, 0, 133,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 133, 147, 147, 133,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -40,7 +40,7 @@
          "name":"End Level",
          "objects":[
                 {
-                 "gid":108,
+                 "gid":149,
                  "height":128,
                  "id":16,
                  "name":"",
@@ -63,7 +63,7 @@
          "name":"Objective",
          "objects":[
                 {
-                 "gid":118,
+                 "gid":167,
                  "height":128,
                  "id":13,
                  "name":"",
@@ -75,7 +75,7 @@
                  "y":1544.64516129032
                 }, 
                 {
-                 "gid":118,
+                 "gid":167,
                  "height":128,
                  "id":14,
                  "name":"",
@@ -87,7 +87,7 @@
                  "y":760.774193548387
                 }, 
                 {
-                 "gid":118,
+                 "gid":167,
                  "height":128,
                  "id":15,
                  "name":"",
@@ -121,7 +121,7 @@
          "name":"Power Up",
          "objects":[
                 {
-                 "gid":201,
+                 "gid":153,
                  "height":128,
                  "id":18,
                  "name":"",
@@ -285,7 +285,7 @@
          "name":"Moving Platforms",
          "objects":[
                 {
-                 "gid":191,
+                 "gid":143,
                  "height":128,
                  "id":22,
                  "name":"",
@@ -313,7 +313,7 @@
                  "y":2349.18518518518
                 }, 
                 {
-                 "gid":191,
+                 "gid":143,
                  "height":128,
                  "id":23,
                  "name":"",
@@ -341,7 +341,7 @@
                  "y":1918.90383682072
                 }, 
                 {
-                 "gid":191,
+                 "gid":143,
                  "height":128,
                  "id":24,
                  "name":"",
@@ -369,7 +369,7 @@
                  "y":1385.58298320784
                 }, 
                 {
-                 "gid":191,
+                 "gid":143,
                  "height":128,
                  "id":25,
                  "name":"",
@@ -397,7 +397,7 @@
                  "y":1791.65090061983
                 }, 
                 {
-                 "gid":191,
+                 "gid":143,
                  "height":128,
                  "id":26,
                  "name":"",
@@ -432,7 +432,7 @@
         }, 
         {
          "data":[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 205, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 157, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -498,7 +498,7 @@
          "name":"Coins",
          "objects":[
                 {
-                 "gid":20,
+                 "gid":98,
                  "height":128,
                  "id":7,
                  "name":"",
@@ -516,7 +516,7 @@
                  "y":1778.83622350674
                 }, 
                 {
-                 "gid":20,
+                 "gid":98,
                  "height":128,
                  "id":9,
                  "name":"",
@@ -571,7 +571,7 @@
          "y":0
         }],
  "nextlayerid":14,
- "nextobjectid":27,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -1066,356 +1066,7 @@
          "tilewidth":128
         }, 
         {
-         "columns":0,
          "firstgid":79,
-         "grid":
-            {
-             "height":1,
-             "orientation":"orthogonal",
-             "width":1
-            },
-         "margin":0,
-         "name":"items",
-         "spacing":0,
-         "tilecount":24,
-         "tileheight":128,
-         "tiles":[
-                {
-                 "id":0,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/coinBronze.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "objectgroup":
-                    {
-                     "draworder":"index",
-                     "name":"",
-                     "objects":[
-                            {
-                             "ellipse":true,
-                             "height":64,
-                             "id":2,
-                             "name":"",
-                             "rotation":0,
-                             "type":"",
-                             "visible":true,
-                             "width":64,
-                             "x":32,
-                             "y":32
-                            }],
-                     "opacity":1,
-                     "type":"objectgroup",
-                     "visible":true,
-                     "x":0,
-                     "y":0
-                    },
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"string",
-                         "value":"1"
-                        }]
-                }, 
-                {
-                 "id":1,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/coinGold.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "objectgroup":
-                    {
-                     "draworder":"index",
-                     "name":"",
-                     "objects":[
-                            {
-                             "ellipse":true,
-                             "height":64,
-                             "id":1,
-                             "name":"",
-                             "rotation":0,
-                             "type":"",
-                             "visible":true,
-                             "width":64,
-                             "x":32,
-                             "y":32
-                            }],
-                     "opacity":1,
-                     "type":"objectgroup",
-                     "visible":true,
-                     "x":0,
-                     "y":0
-                    },
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"string",
-                         "value":"10"
-                        }]
-                }, 
-                {
-                 "id":2,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/coinSilver.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "objectgroup":
-                    {
-                     "draworder":"index",
-                     "name":"",
-                     "objects":[
-                            {
-                             "ellipse":true,
-                             "height":64,
-                             "id":1,
-                             "name":"",
-                             "rotation":0,
-                             "type":"",
-                             "visible":true,
-                             "width":64,
-                             "x":32,
-                             "y":32
-                            }],
-                     "opacity":1,
-                     "type":"objectgroup",
-                     "visible":true,
-                     "x":0,
-                     "y":0
-                    },
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"string",
-                         "value":"5"
-                        }]
-                }, 
-                {
-                 "id":3,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagGreen_down.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "objectgroup":
-                    {
-                     "draworder":"index",
-                     "name":"",
-                     "objects":[
-                            {
-                             "height":128,
-                             "id":1,
-                             "name":"",
-                             "rotation":0,
-                             "type":"",
-                             "visible":true,
-                             "width":32,
-                             "x":0,
-                             "y":0
-                            }],
-                     "opacity":1,
-                     "type":"objectgroup",
-                     "visible":true,
-                     "x":0,
-                     "y":0
-                    }
-                }, 
-                {
-                 "animation":[
-                        {
-                         "duration":500,
-                         "tileid":4
-                        }, 
-                        {
-                         "duration":500,
-                         "tileid":5
-                        }],
-                 "id":4,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagGreen1.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"string",
-                         "value":"25"
-                        }]
-                }, 
-                {
-                 "id":5,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagGreen2.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":6,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagRed_down.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":7,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagRed1.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":8,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagRed2.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":9,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagYellow_down.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":10,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagYellow1.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":11,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/flagYellow2.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":12,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/gemBlue.png",
-                 "imageheight":128,
-                 "imagewidth":128,
-                 "objectgroup":
-                    {
-                     "draworder":"index",
-                     "name":"",
-                     "objects":[
-                            {
-                             "height":0,
-                             "id":1,
-                             "name":"",
-                             "polygon":[
-                                    {
-                                     "x":0,
-                                     "y":0
-                                    }, 
-                                    {
-                                     "x":-13.8182,
-                                     "y":19.2727
-                                    }, 
-                                    {
-                                     "x":-13.4545,
-                                     "y":24.1818
-                                    }, 
-                                    {
-                                     "x":21.6364,
-                                     "y":47.0909
-                                    }, 
-                                    {
-                                     "x":55.8182,
-                                     "y":24.9091
-                                    }, 
-                                    {
-                                     "x":56,
-                                     "y":18.5455
-                                    }, 
-                                    {
-                                     "x":42.5455,
-                                     "y":-0.545455
-                                    }],
-                             "rotation":0,
-                             "type":"",
-                             "visible":true,
-                             "width":0,
-                             "x":42.5455,
-                             "y":41.0909
-                            }],
-                     "opacity":1,
-                     "type":"objectgroup",
-                     "visible":true,
-                     "x":0,
-                     "y":0
-                    }
-                }, 
-                {
-                 "id":13,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/gemGreen.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":14,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/gemRed.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":15,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/gemYellow.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":16,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/keyBlue.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":17,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/keyGreen.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":18,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/keyRed.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":19,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/keyYellow.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":20,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/items\/star.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":21,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/tiles\/torch1.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "animation":[
-                        {
-                         "duration":400,
-                         "tileid":21
-                        }, 
-                        {
-                         "duration":400,
-                         "tileid":22
-                        }],
-                 "id":22,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/tiles\/torch2.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }, 
-                {
-                 "id":23,
-                 "image":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/images\/tiles\/torchOff.png",
-                 "imageheight":128,
-                 "imagewidth":128
-                }],
-         "tilewidth":128
-        }, 
-        {
-         "firstgid":103,
-         "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
-        }, 
-        {
-         "firstgid":127,
          "source":"arcade_platformer.tsj"
         }],
  "tilewidth":128,
