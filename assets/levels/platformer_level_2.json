@@ -1001,10 +1001,6 @@
                  "imagewidth":128
                 }],
          "tilewidth":128
-        }, 
-        {
-         "firstgid":78,
-         "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
         }],
  "tilewidth":128,
  "type":"map",

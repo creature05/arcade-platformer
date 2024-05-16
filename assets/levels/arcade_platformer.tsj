@@ -8,7 +8,7 @@
  "margin":0,
  "name":"arcade_platformer",
  "spacing":0,
- "tilecount":88,
+ "tilecount":89,
  "tiledversion":"1.10.2",
  "tileheight":128,
  "tiles":[
@@ -537,6 +537,12 @@
         {
          "id":87,
          "image":"..\/images\/tiles\/signLeft.png",
+         "imageheight":128,
+         "imagewidth":128
+        }, 
+        {
+         "id":88,
+         "image":"..\/images\/items\/gemYellow.png",
          "imageheight":128,
          "imagewidth":128
         }],

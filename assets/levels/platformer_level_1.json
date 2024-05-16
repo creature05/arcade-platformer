@@ -96,7 +96,7 @@
          "name":"Power Up",
          "objects":[
                 {
-                 "gid":152,
+                 "gid":128,
                  "height":128,
                  "id":49,
                  "name":"",
@@ -931,10 +931,6 @@
         }, 
         {
          "firstgid":78,
-         "source":"..\/..\/venv\/lib\/python3.11\/site-packages\/arcade\/resources\/tiled_maps\/items.json"
-        }, 
-        {
-         "firstgid":102,
          "source":"arcade_platformer.tsj"
         }],
  "tilewidth":128,
