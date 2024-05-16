@@ -972,7 +972,7 @@ class MyGame(arcade.View):
                                 self.window.show_view(game_over)
                             elif self.tries > 0:
                                 arcade.play_sound(self.game_over)
-                                respawn = RespawnView(self.level)
+                                respawn = RespawnView(self.level, self.tries)
                                 self.window.show_view(respawn)
 
 

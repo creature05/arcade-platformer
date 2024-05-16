@@ -52,12 +52,12 @@
         },
         "assets/levels/platformer_level_1.json": {
             "expandedObjectLayers": [
-                13,
-                2,
-                10,
                 6,
+                10,
+                12,
+                13,
                 14,
-                12
+                2
             ],
             "scale": 0.3794,
             "selectedLayer": 1,
@@ -72,12 +72,12 @@
         },
         "assets/levels/platformer_level_2.json": {
             "expandedObjectLayers": [
-                9,
-                5,
                 11,
                 4,
-                12,
-                8
+                8,
+                9,
+                5,
+                12
             ],
             "scale": 0.26,
             "selectedLayer": 12,
@@ -92,19 +92,19 @@
         },
         "assets/levels/platformer_level_3.json": {
             "expandedObjectLayers": [
-                13,
-                10,
-                9,
                 6,
-                5,
+                10,
                 4,
-                12
+                9,
+                5,
+                12,
+                13
             ],
             "scale": 0.32,
             "selectedLayer": 7,
             "viewCenter": {
-                "x": 1598.4375,
-                "y": 1278.125
+                "x": 229.6875,
+                "y": 1659.375
             }
         },
         "assets/levels/platformer_level_3.json#arcade_platformer": {
@@ -130,18 +130,18 @@
         },
         "assets/levels/platformer_level_4.json": {
             "expandedObjectLayers": [
+                11,
                 10,
+                4,
                 7,
                 5,
-                11,
-                4,
                 12
             ],
             "scale": 0.2671,
             "selectedLayer": 8,
             "viewCenter": {
-                "x": 391.23923624110813,
-                "y": 977.1621115687007
+                "x": 1986.1475102957693,
+                "y": 539.1239236241107
             }
         },
         "assets/levels/platformer_level_4.json#arcade_platformer": {
@@ -153,18 +153,18 @@
         },
         "assets/levels/platformer_level_5.json": {
             "expandedObjectLayers": [
-                13,
-                2,
                 10,
                 3,
+                8,
                 5,
-                8
+                13,
+                2
             ],
             "scale": 0.3212,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 3164.694894146949,
-                "y": 448.31880448318816
+                "x": 1598.692403486924,
+                "y": 1279.5765877957658
             }
         },
         "assets/levels/platformer_level_5.json#arcade_platformer": {
