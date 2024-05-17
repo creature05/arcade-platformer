@@ -876,13 +876,9 @@ class MyGame(arcade.View):
                         collision.health -= BULLET_DAMAGE
 
                         if collision.health <= 0:
+                            self.score += 100
                             collision.remove_from_sprite_lists()
-                            if "Points" not in collision.properties:
-                                pass
-                            else:
-                                enemy_points = int(collision.properties["Points"])
-                                self.score += enemy_points
-                                print(self.score)
+                            
 
                         # Hit sound
                         arcade.play_sound(self.hit_sound)
