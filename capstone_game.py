@@ -937,8 +937,6 @@ class MyGame(arcade.View):
                             print(self.player_health)
                             collision.remove_from_sprite_lists()
                             arcade.play_sound(self.collect_coin_sound)
-                    elif power_up_type == "double jump":
-                        pass
                     elif power_up_type == "speed":
                         self.speed_timer += 5
                         collision.remove_from_sprite_lists()
@@ -947,7 +945,10 @@ class MyGame(arcade.View):
                         self.jump_timer += 5
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)
-
+                    elif power_up_type == "one up":
+                        self.tries += 1
+                        collision.remove_from_sprite_lists()
+                        arcade.play_sound(self.collect_coin_sound)
                     else:
                         collision.remove_from_sprite_lists()
                         arcade.play_sound(self.collect_coin_sound)

@@ -22,9 +22,11 @@ Shoot: Q
 ### Power-Ups
 Invincibility: if you pick up a star you become immune to damage for 8 seconds. any enemy you run into dies instantly.
 
-Super Jump: If you pick up a red mushroom with dots then you can jump extra high for five seconds.
+Super Jump: if you pick up a red mushroom with dots then you can jump extra high for five seconds.
 
 Heart: if you find a heart on the map and you have less than 3 hit points, you gain another hit point.
+
+1UP: if you pick up a brown mushroom then you get an extra life.
 
 Working on more power-ups at the moment
 

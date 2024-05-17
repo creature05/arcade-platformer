@@ -85,6 +85,24 @@
                  "width":128,
                  "x":4.75,
                  "y":2301.5
+                }, 
+                {
+                 "gid":78,
+                 "height":128,
+                 "id":39,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"one up"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2813.74294670846,
+                 "y":1023.24764890282
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -707,24 +725,6 @@
                 {
                  "gid":20,
                  "height":128,
-                 "id":24,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":2817.91287878788,
-                 "y":1012.23106060606
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
                  "id":25,
                  "name":"",
                  "properties":[
@@ -843,7 +843,7 @@
          "y":0
         }],
  "nextlayerid":15,
- "nextobjectid":35,
+ "nextobjectid":40,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -861,7 +861,7 @@
          "margin":0,
          "name":"arcade_platformer",
          "spacing":0,
-         "tilecount":77,
+         "tilecount":78,
          "tileheight":128,
          "tiles":[
                 {
@@ -1328,8 +1328,18 @@
                  "image":"..\/images\/tiles\/mushroomRed.png",
                  "imageheight":128,
                  "imagewidth":128
+                }, 
+                {
+                 "id":77,
+                 "image":"..\/images\/tiles\/mushroomBrown.png",
+                 "imageheight":128,
+                 "imagewidth":128
                 }],
          "tilewidth":128
+        }, 
+        {
+         "firstgid":79,
+         "source":"arcade_platformer.tsj"
         }],
  "tilewidth":128,
  "type":"map",
