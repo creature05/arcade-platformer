@@ -722,9 +722,15 @@ class MyGame(arcade.View):
 
         # Did the player fall off the map?
         if self.player_sprite.center_y < -100:
-            arcade.play_sound(self.game_over)
-            gameover = GameOverView()
-            self.window.show_view(gameover)
+            self.tries -= 1
+            if self.tries == 0:
+                arcade.play_sound(self.game_over)
+                game_over = GameOverView()
+                self.window.show_view(game_over)
+            elif self.tries > 0:
+                arcade.play_sound(self.game_over)
+                respawn = RespawnView(self.level, self.tries)
+                self.window.show_view(respawn)
 
         # Did the player touch something they should not?
         if arcade.check_for_collision_with_list(
