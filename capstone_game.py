@@ -266,7 +266,7 @@ class MyGame(arcade.View):
     Main application class.
     """
 
-    def __init__(self, level = 1, tries = 3):
+    def __init__(self, level = 1, tries = 3, objectives = 0):
 
         # Call the parent class and set up the window
         super().__init__()
@@ -330,7 +330,7 @@ class MyGame(arcade.View):
         self.level_3_score = 0
 
         # Keep track of the objectives
-        self.objectives = 0
+        self.objectives = objectives
 
         self.level_1_objectives = 0
      
@@ -357,7 +357,6 @@ class MyGame(arcade.View):
         self.enemy_can_shoot = False
         self.enemy_shoot_timer = 0
        
-
         # Level
         self.level = level
 
@@ -522,9 +521,11 @@ class MyGame(arcade.View):
         self.gui_camera.use()
 
         # Draw our score on the screen, scrolling it with the viewport
-        score_text = f"Score: {self.score}"
+
+
+        objective_text = f"Objectives: {self.objectives}/15"
         arcade.draw_text(
-            score_text,
+            objective_text,
             10,
             10,
             arcade.csscolor.BLACK,
@@ -729,7 +730,7 @@ class MyGame(arcade.View):
                 self.window.show_view(game_over)
             elif self.tries > 0:
                 arcade.play_sound(self.game_over)
-                respawn = RespawnView(self.level, self.tries)
+                respawn = RespawnView(self.level, self.tries, self.objectives)
                 self.window.show_view(respawn)
 
         # Did the player touch something they should not?
@@ -746,7 +747,7 @@ class MyGame(arcade.View):
                     self.window.show_view(game_over)
                 elif self.tries > 0:
                     arcade.play_sound(self.game_over)
-                    respawn = RespawnView(self.level, self.tries)
+                    respawn = RespawnView(self.level, self.tries, self.objectives)
                     self.window.show_view(respawn)
             
 
@@ -975,7 +976,7 @@ class MyGame(arcade.View):
                                 self.window.show_view(game_over)
                             elif self.tries > 0:
                                 arcade.play_sound(self.game_over)
-                                respawn = RespawnView(self.level, self.tries)
+                                respawn = RespawnView(self.level, self.tries, self.objectives)
                                 self.window.show_view(respawn)
 
 
@@ -1074,10 +1075,11 @@ class GameOverView(arcade.View):
 class RespawnView(arcade.View):
     """Class to manage the game overview"""
 
-    def __init__(self, level, tries):
+    def __init__(self, level, tries, objectives):
         super().__init__()
         self.level = level
         self.tries = tries
+        self.objectives = objectives
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -1097,7 +1099,7 @@ class RespawnView(arcade.View):
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view.""" 
-        game_view = MyGame(self.level, self.tries)
+        game_view = MyGame(self.level, self.tries, self.objectives)
         self.window.show_view(game_view)
         
 
