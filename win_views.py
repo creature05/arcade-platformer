@@ -5,9 +5,10 @@ SCREEN_HEIGHT = 650
 
 class BadAttempt(arcade.View):
 
-    def __init__(self, objectives):
+    def __init__(self, objectives, score):
         super().__init__()
         self.objectives = objectives
+        self.score = score
         
 
     def on_show_view(self):
@@ -32,13 +33,22 @@ class BadAttempt(arcade.View):
                 25,
                 anchor_x="center",
             )
+        
+        arcade.draw_text(
+            f"Score: {self.score}",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2.5,
+                arcade.color.WHITE,
+                20,
+                anchor_x="center",
+            )
 
 class PrettyBadAttempt(arcade.View):
 
-    def __init__(self, objectives):
+    def __init__(self, objectives, score):
         super().__init__()
         self.objectives = objectives
-        
+        self.score = score
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -62,6 +72,15 @@ class PrettyBadAttempt(arcade.View):
                 25,
                 anchor_x="center",
             )
+
+        arcade.draw_text(
+            f"Score: {self.score}",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2.5,
+                arcade.color.WHITE,
+                20,
+                anchor_x="center",
+            )
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view."""
         game_view = MyGame()
@@ -69,10 +88,10 @@ class PrettyBadAttempt(arcade.View):
 
 class NotCloseToWin(arcade.View):
 
-    def __init__(self, objectives):
+    def __init__(self, objectives, score):
         super().__init__()
         self.objectives = objectives
-        
+        self.score = score
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -96,6 +115,15 @@ class NotCloseToWin(arcade.View):
                 25,
                 anchor_x="center",
             )
+
+        arcade.draw_text(
+            f"Score: {self.score}",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2.5,
+                arcade.color.WHITE,
+                20,
+                anchor_x="center",
+            )
     
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view."""
@@ -104,9 +132,10 @@ class NotCloseToWin(arcade.View):
 
 class AlmostWin(arcade.View):
 
-    def __init__(self, objectives):
+    def __init__(self, objectives, score):
         super().__init__()
         self.objectives = objectives
+        self.score = score
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -131,6 +160,15 @@ class AlmostWin(arcade.View):
                 anchor_x="center",
             )
 
+        arcade.draw_text(
+            f"Score: {self.score}",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2.5,
+                arcade.color.WHITE,
+                20,
+                anchor_x="center",
+            )
+
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view."""
         arcade.close_window()
@@ -139,9 +177,10 @@ class AlmostWin(arcade.View):
 class Win(arcade.View):
     """Class to manage the game overview"""
 
-    def __init__(self, objectives):
+    def __init__(self, objectives, score):
         super().__init__()
         self.objectives = objectives
+        self.score = score
 
     def on_show_view(self):
         """Called when switching to this view"""
@@ -164,6 +203,14 @@ class Win(arcade.View):
                 SCREEN_HEIGHT / 2,
                 arcade.color.WHITE,
                 25,
+                anchor_x="center",
+            )
+        arcade.draw_text(
+            f"Score: {self.score}",
+                SCREEN_WIDTH / 2,
+                SCREEN_HEIGHT / 2.5,
+                arcade.color.WHITE,
+                20,
                 anchor_x="center",
             )
 

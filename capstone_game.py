@@ -60,7 +60,6 @@ LAYER_NAME_END_LEVEL = "End Level"
 LAYER_NAME_OBJECTIVE = "Objective"
 LAYER_NAME_INTERACTIVE = "Interactive"
 
-# PLATFORMS = [LAYER_NAME_PLATFORMS, LAYER_NAME_INTERACTIVE_PLATFORMS]
 
 def load_texture_pair(filename):
     """
@@ -1060,19 +1059,19 @@ class MyGame(arcade.View):
                         self.setup()
                     else:
                         if self.objectives >= 12:    
-                            win = win_views.Win(self.objectives)
+                            win = win_views.Win(self.objectives, self.score)
                             self.window.show_view(win)
                         elif self.objectives >= 9:
-                            almost_win = win_views.AlmostWin(self.objectives)
+                            almost_win = win_views.AlmostWin(self.objectives, self.score)
                             self.window.show_view(almost_win) 
                         elif self.objectives >= 6:
-                            not_close_to_win = win_views.NotCloseToWin(self.objectives)
+                            not_close_to_win = win_views.NotCloseToWin(self.objectives, self.score)
                             self.window.show_view(not_close_to_win) 
                         elif self.objectives >= 1:
-                            pretty_bad_attempt = win_views.PrettyBadAttempt(self.objectives)
+                            pretty_bad_attempt = win_views.PrettyBadAttempt(self.objectives, self.score)
                             self.window.show_view(pretty_bad_attempt)
                         elif self.objectives == 0:
-                            bad_attempt = win_views.BadAttempt(self.objectives)
+                            bad_attempt = win_views.BadAttempt(self.objectives, self.score)
                             self.window.show_view(bad_attempt)
                     if self.level == 2:
                         self.objectives += self.level_1_objectives
