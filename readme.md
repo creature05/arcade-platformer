@@ -45,7 +45,7 @@ Heart: if you find a heart on the map and you have less than 3 hit points, you g
 
 1UP: if you pick up a brown mushroom then you get an extra life.
 
-Working on more power-ups at the moment
+
 
 
 
