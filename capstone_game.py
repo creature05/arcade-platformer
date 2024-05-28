@@ -265,7 +265,7 @@ class MyGame(arcade.View):
     Main application class.
     """
 
-    def __init__(self, level = 1, tries = 3, objective = 0):
+    def __init__(self, level = 1, tries = 3, objective = 0, score = 0):
 
         # Call the parent class and set up the window
         super().__init__()
@@ -320,13 +320,17 @@ class MyGame(arcade.View):
         self.gui_camera = None
 
         # Keep track of the score
-        self.score = 0
+        self.score = score
 
         self.level_1_score = 0
 
         self.level_2_score = 0
 
         self.level_3_score = 0
+
+        self.level_4_score = 0
+        
+        self.level_5_score = 0
 
         # Keep track of the objectives
 
@@ -571,6 +575,56 @@ class MyGame(arcade.View):
                 18,
             )
 
+        if self.level == 1:
+            level_1_score_text = f"Score: {self.level_1_score}"
+            arcade.draw_text(
+            level_1_score_text,
+            870,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
+        if self.level == 2:
+            level_2_score_text = f"Score: {self.level_2_score}"
+            arcade.draw_text(
+            level_2_score_text,
+            870,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
+        if self.level == 3:
+            level_3_score_text = f"Score: {self.level_3_score}"
+            arcade.draw_text(
+            level_3_score_text,
+            870,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
+        if self.level == 4:
+            level_4_score_text = f"Score: {self.level_4_score}"
+            arcade.draw_text(
+            level_4_score_text,
+            870,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
+        if self.level == 5:
+            level_5_score_text = f"Score: {self.level_5_score}"
+            arcade.draw_text(
+            level_5_score_text,
+            870,
+            620,
+            arcade.csscolor.BLACK,
+            18,
+        )
+
         life_text = f"Lives: {self.tries}"
         arcade.draw_text(
             life_text,
@@ -580,14 +634,6 @@ class MyGame(arcade.View):
             18,
         )
 
-        score_text = f"Score: {self.score}"
-        arcade.draw_text(
-            score_text,
-            870,
-            620,
-            arcade.csscolor.BLACK,
-            18,
-        )
 
         # Draw hearts
         self.draw_hearts()
@@ -778,7 +824,7 @@ class MyGame(arcade.View):
                 self.window.show_view(game_over)
             elif self.tries > 0:
                 arcade.play_sound(self.game_over)
-                respawn = RespawnView(self.level, self.tries, self.objectives)
+                respawn = RespawnView(self.level, self.tries, self.objectives, self.score)
                 self.window.show_view(respawn)
 
 
@@ -796,7 +842,7 @@ class MyGame(arcade.View):
                     self.window.show_view(game_over)
                 elif self.tries > 0:
                     arcade.play_sound(self.game_over)
-                    respawn = RespawnView(self.level, self.tries, self.objectives)
+                    respawn = RespawnView(self.level, self.tries, self.objectives, self.score)
                     self.window.show_view(respawn)
 
             
@@ -934,7 +980,19 @@ class MyGame(arcade.View):
                         collision.health -= BULLET_DAMAGE
 
                         if collision.health <= 0:
-                            self.score += 100
+                            if self.level == 1:
+                                self.level_1_score += 100
+                            elif self.level == 2:
+                                self.level_2_score += 100
+                            elif self.level == 3:
+                                self.level_3_score += 100
+                            elif self.level == 4:
+                                self.level_4_score += 100
+                            elif self.level == 5:
+                                self.level_5_score += 100
+                                self.score += 1
+                                
+                            
                             collision.remove_from_sprite_lists()
                             
 
@@ -971,7 +1029,20 @@ class MyGame(arcade.View):
                         print("warning, collected a coin without a Points property.")
                     else:
                         points = int(collision.properties["Points"])
-                        self.score += points
+                        if self.level == 1:
+                            self.level_1_score += points
+                        elif self.level == 2:
+                            self.level_2_score += points
+                        elif self.level == 3:
+                            self.level_3_score += points
+                        elif self.level == 4:
+                            self.level_4_score += points
+                        elif self.level == 5:
+                            self.level_5_score += points
+                            self.score += points
+                            print(self.score)
+                            
+                        # self.score += points
 
                     # Remove the coin
                     collision.remove_from_sprite_lists()
@@ -1010,7 +1081,18 @@ class MyGame(arcade.View):
                 elif self.scene[LAYER_NAME_ENEMIES] in collision.sprite_lists:
                     if self.invincible_timer > 0:  
                         collision.remove_from_sprite_lists()
-                        self.score += 100
+                        if self.level == 1:
+                            self.level_1_score += 100
+                        elif self.level == 2:
+                            self.level_2_score += 100
+                        elif self.level == 3:
+                            self.level_3_score += 100
+                        elif self.level == 4:
+                            self.level_4_score += 100
+                        elif self.level == 5:
+                            self.level_5_score += 100
+                            self.score += 1
+                            print(self.score)
                         arcade.play_sound(self.hit_sound)
                     elif self.damage_timer > 0:
                         pass
@@ -1027,7 +1109,7 @@ class MyGame(arcade.View):
                                 self.window.show_view(game_over)
                             elif self.tries > 0:
                                 arcade.play_sound(self.game_over)
-                                respawn = RespawnView(self.level, self.tries, self.objectives)
+                                respawn = RespawnView(self.level, self.tries, self.objectives, self.score)
                                 self.window.show_view(respawn)
 
 
@@ -1043,6 +1125,9 @@ class MyGame(arcade.View):
                             delete_list.append(tile)
                         for tile in delete_list:
                             tile.remove_from_sprite_lists()
+
+                        for enemy in self.scene[LAYER_NAME_ENEMIES]:
+                            enemy.remove_from_sprite_lists()
                         
                         
                             
@@ -1083,6 +1168,16 @@ class MyGame(arcade.View):
                         self.objectives += self.level_4_objectives
                     print(self.objectives)
 
+                    if self.level == 2:
+                        self.score += self.level_1_score
+                    elif self.level == 3:
+                        self.score += self.level_2_score
+                    elif self.level == 4:
+                        self.score += self.level_3_score
+                    elif self.level == 5:
+                        self.score += self.level_4_score
+                    print(self.score)
+
                 # handles objectives
                 elif self.scene[LAYER_NAME_OBJECTIVE] in collision.sprite_lists:
                     if self.level == 1:
@@ -1099,6 +1194,7 @@ class MyGame(arcade.View):
                         print(self.objectives)
                     collision.remove_from_sprite_lists()
                     arcade.play_sound(self.collect_coin_sound)
+                    
                     
 
         # Position the camera
@@ -1132,11 +1228,12 @@ class GameOverView(arcade.View):
 class RespawnView(arcade.View):
     """Class to manage the game overview"""
 
-    def __init__(self, level, tries, objective):
+    def __init__(self, level, tries, objective, score):
         super().__init__()
         self.level = level
         self.tries = tries
         self.objectives = objective
+        self.score = score
         
 
     def on_show_view(self):
@@ -1157,7 +1254,7 @@ class RespawnView(arcade.View):
 
     def on_mouse_press(self, _x, _y, _button, _modifiers):
         """Use a mouse press to advance to the 'game' view.""" 
-        game_view = MyGame(self.level, self.tries, self.objectives)
+        game_view = MyGame(self.level, self.tries, self.objectives, self.score)
         self.window.show_view(game_view)
         
 

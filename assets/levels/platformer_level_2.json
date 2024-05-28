@@ -148,8 +148,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":2559.76237623762,
-                 "y":1895.68316831683
+                 "x":2305.91622239147,
+                 "y":641.837014470676
                 }, 
                 {
                  "gid":75,
@@ -214,7 +214,7 @@
         }, 
         {
          "compression":"zlib",
-         "data":"eJxjYBgFowABuAlgnoFz2rAFcnjwQAMuBtrFOzcNzKQnoLb7+YFYEIj5qGwusvmcQMwMxBwk2ANzFzEYZj4Mc5CpbxSThwH+ZwQ1",
+         "data":"eJxjYBgFowABuAlgHiS1vGj0KCAPyOHBAwVgccrFgBnvQwEMxTTJD8SCQMxHQ\/M5gZgZiDlIsAfmLmIwzHwY5iBT3ygmDwMApQ4EUw==",
          "encoding":"base64",
          "height":20,
          "id":1,

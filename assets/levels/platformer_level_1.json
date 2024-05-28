@@ -96,7 +96,7 @@
          "name":"Power Up",
          "objects":[
                 {
-                 "gid":128,
+                 "gid":129,
                  "height":128,
                  "id":49,
                  "name":"",
@@ -112,6 +112,24 @@
                  "width":128,
                  "x":647.111111111111,
                  "y":1915.85185185185
+                }, 
+                {
+                 "gid":78,
+                 "height":128,
+                 "id":54,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"type",
+                         "type":"string",
+                         "value":"one up"
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2686.64267352185,
+                 "y":1280.79520137104
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -317,24 +335,6 @@
                  "width":128,
                  "x":2439.45114122203,
                  "y":1272.45228043371
-                }, 
-                {
-                 "gid":20,
-                 "height":128,
-                 "id":34,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"Points",
-                         "type":"int",
-                         "value":10
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":2678.84508061598,
-                 "y":1267.90682588826
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -441,7 +441,7 @@
          "y":0
         }],
  "nextlayerid":16,
- "nextobjectid":54,
+ "nextobjectid":55,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
@@ -459,7 +459,7 @@
          "margin":0,
          "name":"arcade_platformer",
          "spacing":0,
-         "tilecount":77,
+         "tilecount":78,
          "tileheight":128,
          "tiles":[
                 {
@@ -926,11 +926,17 @@
                  "image":"..\/images\/tiles\/mushroomRed.png",
                  "imageheight":128,
                  "imagewidth":128
+                }, 
+                {
+                 "id":77,
+                 "image":"..\/images\/tiles\/mushroomBrown.png",
+                 "imageheight":128,
+                 "imagewidth":128
                 }],
          "tilewidth":128
         }, 
         {
-         "firstgid":78,
+         "firstgid":79,
          "source":"arcade_platformer.tsj"
         }],
  "tilewidth":128,

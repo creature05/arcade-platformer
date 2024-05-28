@@ -71,8 +71,8 @@
                  "type":"",
                  "visible":true,
                  "width":128,
-                 "x":2818.43605709359,
-                 "y":140.923076923077
+                 "x":3070.61538461538,
+                 "y":131.583101829677
                 }, 
                 {
                  "gid":74,
@@ -687,6 +687,168 @@
                  "width":128,
                  "x":2689.84615384615,
                  "y":1267.84615384615
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":44,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2305.2403486924,
+                 "y":1016.32378580324
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":45,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":2688.17932752179,
+                 "y":639.611457036114
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":46,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":3071.11830635118,
+                 "y":1028.77708592777
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":47,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":3071.11830635118,
+                 "y":1533.13574097136
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":48,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":1916.07471980075,
+                 "y":767.257783312578
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":49,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":1025.66376089664,
+                 "y":773.484433374844
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":50,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":511.965130759651,
+                 "y":1156.42341220423
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":51,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":508.851805728518,
+                 "y":390.545454545455
+                }, 
+                {
+                 "gid":20,
+                 "height":128,
+                 "id":52,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"Points",
+                         "type":"int",
+                         "value":10
+                        }],
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":128,
+                 "x":125.912826899129,
+                 "y":1539.36239103362
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -726,7 +888,7 @@
          "y":0
         }],
  "nextlayerid":17,
- "nextobjectid":44,
+ "nextobjectid":53,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.2",
