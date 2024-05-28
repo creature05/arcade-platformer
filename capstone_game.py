@@ -34,7 +34,7 @@ BOTTOM_VIEWPORT_MARGIN = 150
 TOP_VIEWPORT_MARGIN = 100
 
 # Player starting position
-PLAYER_START_X = 1
+PLAYER_START_X = 2
 PLAYER_START_Y = 7
 
 # Constants used to track if the player is facing left or right
@@ -834,16 +834,23 @@ class MyGame(arcade.View):
         ):
             if self.invincible_timer > 0:
                 pass
+            elif self.damage_timer > 0:
+                pass
             else:
-                self.tries -= 1
-                if self.tries == 0:
-                    arcade.play_sound(self.game_over)
-                    game_over = GameOverView()
-                    self.window.show_view(game_over)
-                elif self.tries > 0:
-                    arcade.play_sound(self.game_over)
-                    respawn = RespawnView(self.level, self.tries, self.objectives, self.score)
-                    self.window.show_view(respawn)
+                self.player_health -= 1
+                arcade.play_sound(self.hit_sound)
+                self.damage_timer += 1
+                print(self.player_health)                 
+                if self.player_health <= 0:
+                    self.tries -= 1
+                    if self.tries == 0:
+                        arcade.play_sound(self.game_over)
+                        game_over = GameOverView()
+                        self.window.show_view(game_over)
+                    elif self.tries > 0:
+                        arcade.play_sound(self.game_over)
+                        respawn = RespawnView(self.level, self.tries, self.objectives, self.score)
+                        self.window.show_view(respawn)
 
             
             
