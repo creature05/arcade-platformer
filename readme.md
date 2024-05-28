@@ -2,11 +2,28 @@
 
 ## Requirements
 
+All requirements are listed in the `requirements.txt` file.
+
 ### Python Version
 Minimum of Python 3.11.4
 
 ### Arcade Version
 Minimum of arcade 2.6.17
+
+### Installation
+
+After cloning the repo into a new folder, perform the following:
+```shell
+$ cd new-folder
+$ python -m venv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+To run the game:
+```shell
+$ python capstone_game.py 
+```
 
 ## Game Instructions
 
