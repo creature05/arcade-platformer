@@ -137,24 +137,6 @@
                  "width":128,
                  "x":639.225806451613,
                  "y":2047.87096774194
-                }, 
-                {
-                 "gid":129,
-                 "height":128,
-                 "id":28,
-                 "name":"",
-                 "properties":[
-                        {
-                         "name":"type",
-                         "type":"string",
-                         "value":"Invincible"
-                        }],
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":128,
-                 "x":1537.54988698741,
-                 "y":1665.54988698741
                 }],
          "opacity":1,
          "properties":[
